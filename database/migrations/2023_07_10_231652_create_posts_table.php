@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('body',2000);
             $table->string('post_image');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
