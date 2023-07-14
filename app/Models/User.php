@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Auth;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
@@ -68,5 +69,15 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
     
+    public function followingCategories()
+    {
+        return Auth::user()->relationships->pluck('category_id');
+    }
+    
+    public function followingCategoryPosts()
+    {
+        $categoryIds=$this->followingCategories();
+        return Post::whereIn('category_id',$categoryIds)->get();
+    }
     
 }
