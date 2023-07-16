@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Auth;
 use App\Models\Post;
 
 class User extends Authenticatable
@@ -71,13 +70,19 @@ class User extends Authenticatable
     
     public function followingCategories()
     {
-        return Auth::user()->relationships->pluck('category_id');
+        return $this->belongsToMany(Category::class,'relationships');
     }
     
     public function followingCategoryPosts()
     {
-        $categoryIds=$this->followingCategories();
-        return Post::whereIn('category_id',$categoryIds)->get();
+        return Post::whereHas('category',function($query){
+            $query->whereIn('categories.id',$this->followingCategories()->pluck('categories.id'));
+        });
+    }
+    
+    public function followingCategoriesWithUser()
+    {
+        return $this->followingCategories()->with('user');
     }
     
 }
