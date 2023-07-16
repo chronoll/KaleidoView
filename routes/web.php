@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 //Route::get('/test', [UserController::class,'timeline']);
-Route::get('/timeline', [UserController::class,'timeline']); 
+Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
