@@ -21,6 +21,11 @@ Route::get('/', function () {
 
 //Route::get('/test', [UserController::class,'timeline']);
 Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
+Route::get('/posts/{post}',[PostController::class,'show']);
+
+Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
+Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
