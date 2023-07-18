@@ -85,4 +85,10 @@ class User extends Authenticatable
         return $this->followingCategories()->with('user');
     }
     
+    public function hasLiked(Post $post)
+    {
+        return $this->likes()->where('post_id', $post->id)->exists();
+        
+    }
+
 }
