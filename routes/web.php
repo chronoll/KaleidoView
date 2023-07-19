@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::get('/posts/{post}',[PostController::class,'show']);
 Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
 Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike');
 
+Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

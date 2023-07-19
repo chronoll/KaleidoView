@@ -37,10 +37,19 @@
         </form>
         @endif
     </div>
-    <div>
+    <div class='comments'>
     <h3>Comments ({{ $comments->count() }})</h3>
     @foreach ($comments as $comment)
         @include('comments', ['comment' => $comment, 'margin' => 0])
     @endforeach
-</div>
+    </div>
+    <div class='post_comment'>
+        <img src="{{ Auth::user()->user_image }}" alt="User image">
+        <form method='POST' action='{{route('comment',$post)}}'>
+            @csrf
+            <textarea name='content' placeholder='コメントを入力...'>{{old('content')}}</textarea>
+            <p class='content_error' style='color:red'>{{$errors->first('content')}}</p>
+            <button type='submit'>送信</button>
+        </form>
+    </div>
 </x-app-layout>
