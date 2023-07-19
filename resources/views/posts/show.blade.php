@@ -43,13 +43,15 @@
         @include('comments', ['comment' => $comment, 'margin' => 0])
     @endforeach
     </div>
-    <div class='post_comment'>
+    <div id='originalFormLocation'>
         <img src="{{ Auth::user()->user_image }}" alt="User image">
-        <form method='POST' action='{{route('comment',$post)}}'>
+        <form class='post_comment' method='POST' action='{{route('comment',$post)}}'>
             @csrf
             <textarea name='content' placeholder='コメントを入力...'>{{old('content')}}</textarea>
+            <input type="hidden" name="parent_comment_id" id="parentCommentIdField" value="">  
             <p class='content_error' style='color:red'>{{$errors->first('content')}}</p>
             <button type='submit'>送信</button>
+            <button id='cancelReply' style='display: none;'>返信をやめる</button>
         </form>
     </div>
 </x-app-layout>

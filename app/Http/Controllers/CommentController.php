@@ -15,6 +15,7 @@ class CommentController extends Controller
         $post->comments()->create([
             'user_id' => Auth::user()->id,
             'content' => $request->content,
+            'parent_comment_id' => $request->parent_comment_id,
         ]);
         
         return back();
