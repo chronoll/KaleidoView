@@ -25,7 +25,7 @@ class UserController extends Controller
             
             return view('profile.user')->with([
             'user'=>$user,
-            'categories'=>$user->categories(),
+            'categories'=>$user->categories()->get(),
             ]);
         }
         
