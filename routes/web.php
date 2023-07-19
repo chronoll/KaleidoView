@@ -29,6 +29,8 @@ Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike
 
 Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
 
+Route::get('/users/{name}',[UserController::class,'show_user']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

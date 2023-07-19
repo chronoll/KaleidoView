@@ -16,4 +16,19 @@ class UserController extends Controller
             'posts'=>$user->followingCategoryPosts()->get(),
             ]);
     }
+    
+    public function show_user($name)
+    {
+        $user = User::where('name', $name)->first();
+        
+        if($user){
+            
+            return view('profile.user')->with([
+            'user'=>$user,
+            'categories'=>$user->categories(),
+            ]);
+        }
+        
+        return redirect('/404');
+    }
 }
