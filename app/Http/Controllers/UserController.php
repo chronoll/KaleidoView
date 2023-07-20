@@ -22,11 +22,12 @@ class UserController extends Controller
         $user = User::where('name', $name)->first();
         
         if($user){
-            
-            return view('profile.user')->with([
-            'user'=>$user,
-            'categories'=>$user->categories()->get(),
-            ]);
+            $categories=$user->categories;
+            $followers=[];
+            foreach($categories as $category){
+                $followers[$category->id]=$category->followers();
+            }
+            return view('profile.user',compact('user','categories','followers'));
         }
         
         return redirect('/404');

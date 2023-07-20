@@ -15,6 +15,9 @@
         <div class='category'>
             <img src='{{$category->category_image}}'/>
             <h3>{{$category->name}}</h3>
+            <div class='followers'>
+                <h3>Followers({{$followers[$category->id]->count()}})</h3>
+            </div>
         </div>
         @endforeach
     </div>
