@@ -2,6 +2,11 @@
     <x-slot name='header'>
         Profile
     </x-slot>
+    <div class='edit'>
+        @if (Auth::id() == $user->id)
+        <a href="/users/edit">Edit</a>
+        @endif
+    </div>
     <div class='user'>
         <img src='{{$user->user_image}}'/>
         <div class='names'>
@@ -28,5 +33,10 @@
             </div>
         </div>
         @endforeach
+        <div class='edit'>
+            @if (Auth::id() == $user->id)
+            <a href="/categories/edit">New Category</a>
+        @endif
+        </div>
     </div>
 </x-app-layout>
