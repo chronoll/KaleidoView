@@ -23,6 +23,9 @@ class Category extends Model
     {
         return $this->hasMany(Relationship::class);
     }
-
     
+    public function followers() //CategoryをfollowするUserモデルのコレクションを返す
+    {
+        return $this->relationships()->with('user')->get()->pluck('user');
+    }
 }
