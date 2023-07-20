@@ -33,7 +33,7 @@
             </div>
         </div>
         @endforeach
-        <div class='edit'>
+        <div class='new_category'>
             @if (Auth::id() == $user->id)
             <a href="/categories/edit">New Category</a>
         @endif
