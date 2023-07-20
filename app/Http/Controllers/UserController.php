@@ -24,10 +24,12 @@ class UserController extends Controller
         if($user){
             $categories=$user->categories;
             $followers=[];
+            $posts=[];
             foreach($categories as $category){
                 $followers[$category->id]=$category->followers();
+                $posts[$category->id]=$category->posts;
             }
-            return view('profile.user',compact('user','categories','followers'));
+            return view('profile.user',compact('user','categories','followers','posts'));
         }
         
         return redirect('/404');

@@ -18,6 +18,14 @@
             <div class='followers'>
                 <h3>Followers({{$followers[$category->id]->count()}})</h3>
             </div>
+            <div class='posts'>
+                @foreach($posts[$category->id]->sortBy('created_at')->take(3) as $post)
+                <img src='{{$post->post_image}}'/>
+                @endforeach
+                @if($posts[$category->id]->count()>3)
+                <small>+{{$posts[$category->id]->count()-3}}</small>
+                @endif
+            </div>
         </div>
         @endforeach
     </div>
