@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
+use App\Http\Requests\PostRequest;
 use Auth;
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -34,6 +37,26 @@ class PostController extends Controller
         $comments = $post->comments()->whereNull('parent_comment_id')->orderBy('created_at')->get();
         return view('posts.show', compact('post', 'comments'));
         
+    }
+    
+    public function create(Category $category)
+    {
+        if(Auth::id()!=$category->user_id){ //認証中UserのもつCategoryでない場合
+            return redirect('/timeline');
+        }
+        
+        return view('posts.create_post',['category'=>$category]);
+    }
+    
+    public function store(PostRequest $request,Post $post)
+    {
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        
+        $input=$request['post'];
+        $input+=['user_id'=>Auth::user()->id];
+        $input+=['post_image'=>$image_url];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
     }
 
 }

@@ -20,7 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/test', [UserController::class,'timeline']);
+Route::get('/test', [PostController::class,'test']);
+
 Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
 Route::get('/posts/{post}',[PostController::class,'show']);
 
@@ -30,6 +31,10 @@ Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike
 Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
 
 Route::get('/users/{name}',[UserController::class,'show_user']);
+
+Route::get('/categories/{category}/create',[PostController::class,'create'])->middleware('auth');
+Route::post('/posts',[PostController::class,'store'])->middleware('auth');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
