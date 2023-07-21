@@ -24,7 +24,7 @@
                 <h3>Followers({{$followers[$category->id]->count()}})</h3>
             </div>
             <div class='posts'>
-                @foreach($posts[$category->id]->sortBy('created_at')->take(3) as $post)
+                @foreach($posts[$category->id]->sortByDesc('created_at')->take(3) as $post)
                 <img src='{{$post->post_image}}'/>
                 @endforeach
                 @if($posts[$category->id]->count()>3)
