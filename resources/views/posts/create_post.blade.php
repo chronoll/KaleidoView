@@ -8,7 +8,7 @@
         @csrf
         <input type="hidden" name="post[category_id]" value="{{ $category->id }}" />
         <div class='image'>
-            <input id='file-input' type='file' name='image'>
+            <input id='file-input' type='file' name='image' accept='image/*'>
             <button type='button' id='reset-file'>Reset File</button>
         </div>
         <div class='title'>
