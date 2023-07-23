@@ -35,6 +35,8 @@ Route::get('/users/{name}',[UserController::class,'show_user']);
 Route::get('/categories/{category}/create',[PostController::class,'create'])->middleware('auth');
 Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
+Route::get('/posts/{post}/edit',[PostController::class,'edit'])->middleware('auth');
+Route::put('/posts/{post}',[PostController::class,'update'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

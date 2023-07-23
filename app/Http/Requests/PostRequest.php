@@ -12,13 +12,23 @@ class PostRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
-        return [
-            'post.category_id'=>'required|integer|exists:categories,id',
-            'post.title'=>'required|string|max:50',
-            'post.body'=>'required|string|max:2000',
+    public function rules(){
+        $rules = [
+            'post.category_id' => 'required|integer|exists:categories,id',
+            'post.title' => 'required|string|max:50',
+            'post.body' => 'required|string|max:2000',
             'image' => 'required|mimes:jpg,jpeg,png,gif,svg,webp',
         ];
+            
+        if ($this->isMethod('put')) {
+            $rules['image'] = 'nullable';
+        }
+        
+        return $rules;
+        
     }
+
+
+
+
 }

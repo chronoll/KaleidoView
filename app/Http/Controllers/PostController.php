@@ -58,5 +58,22 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
+    
+    public function edit(Post $post)
+    {
+        if(Auth::id()!=$post->user_id){ //認証中UserのもつPostでない場合
+            return redirect('/timeline');
+        }
+        
+        return view('posts.edit_post',['post'=>$post,'category'=>$post->category]);
+    }
+    
+    public function update(PostRequest $request,Post $post)
+    {
+        $input=$request['post'];
+        $input+=['user_id'=>Auth::user()->id];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
 
 }
