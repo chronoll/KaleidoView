@@ -4,7 +4,7 @@
     </x-slot>
     <h1>Edit your post</h1>
     <p>{{$category->name}}</p>
-    <form action='/posts/{{$post->id}}' method='POST' enctype='multipart/form-data'>
+    <form action='/posts/{{$post->id}}' method='POST'>
         @csrf
         @method('PUT')
         <input type="hidden" name="post[category_id]" value="{{ $category->id }}" />
@@ -15,7 +15,7 @@
         <div class='title'>
             <h2>Title</h2>
             <input type='text' name='post[title]' placeholder='タイトル' value='{{$post->title}}'/>
-            <p class="title_error" style="color:red">{{ $errors->first('image') }}</p>
+            <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
         </div>
         <div class='body'>
             <h2>Body</h2>
