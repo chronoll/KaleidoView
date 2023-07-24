@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,8 @@ Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
 Route::get('/posts/{post}/edit',[PostController::class,'edit'])->middleware('auth');
 Route::put('/posts/{post}',[PostController::class,'update'])->middleware('auth');
+
+Route::get('/search', [SearchController::class,'search'])->middleware('auth'); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
