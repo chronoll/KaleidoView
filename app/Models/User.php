@@ -90,5 +90,9 @@ class User extends Authenticatable
         return $this->likes()->where('post_id', $post->id)->exists();
         
     }
-
+    
+    public static function searchByName($term)
+    {
+        return static::where('name', 'like', '%' . $term . '%')->get();
+    }
 }

@@ -28,4 +28,9 @@ class Category extends Model
     {
         return $this->relationships()->with('user')->get()->pluck('user');
     }
+    
+    public static function searchByName($term)
+    {
+        return static::where('name', 'like', '%' . $term . '%')->get();
+    }
 }
