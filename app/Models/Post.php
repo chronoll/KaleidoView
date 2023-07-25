@@ -36,4 +36,9 @@ class Post extends Model
     {
         return $this->hasMany(Like::class);
     }
+    
+    public static function searchByTitle($term)
+    {
+        return static::where('title', 'like', '%' . $term . '%')->with('user','category')->get();
+    }
 }

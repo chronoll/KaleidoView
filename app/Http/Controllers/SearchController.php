@@ -17,13 +17,13 @@ class SearchController extends Controller
         
         switch ($searchType) {
             case 'post':
-                $results = Post::where('title', 'like', '%' . $searchTerm . '%')->get();
+                $results =Post::searchByTitle($searchTerm);
                 break;
             case 'category':
-                $results = Category::where('name', 'like', '%' . $searchTerm . '%')->get();
+                $results = Category::searchByName($searchTerm);
                 break;
             case 'user':
-                $results = User::where('name', 'like', '%' . $searchTerm . '%')->get();
+                $results = User::searchByName($searchTerm);
                 break;
             default:
                 $results = collect();

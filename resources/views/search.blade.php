@@ -31,23 +31,34 @@
                     @switch($type)
                         @case('post')
                             @foreach($results as $post)
+                            <div class='post'>
+                                <img src="{{ $post->user->user_image }}" alt="画像が読み込めません。"/>
                                 <p class='name'>{{'@'.$post->user->name}}-{{$post->category->name}}</p>
                                 <h2 class='title'>{{$post->title}}</h2>
                                 <div class='image'>
                                     <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
                                 </div>
+                            </div>
                             @endforeach
                             @break
     
                         @case('category')
-                            @foreach($results as $result)
-                                <h2><a href="{{ url('/categories/' . $result->id) }}">{{ $result->name }}</a></h2>
+                            @foreach($results as $category)
+                            <div class='category'>
+                                <img src='{{$category->category_image}}'/>
+                                <h3>{{$category->name}}</h3>
+                            </div>
                             @endforeach
                             @break
     
                         @case('user')
-                            @foreach($results as $result)
-                                <h2><a href="{{ url('/users/' . $result->name) }}">{{ $result->name }}</a></h2>
+                            @foreach($results as $user)
+                            <<div class='user'>
+                                <img src="{{ $user->user_image }}" alt="画像が読み込めません。"/>
+                                <p class='name'>{{'@'.$user->name}}</p>
+                                <p class='nickname'>{{'@'.$user->nickname}}</p>
+                                <h2 class='self_introduction'>{{$user->self_introduction}}</h2>
+                            </div>
                             @endforeach
                             @break
     
