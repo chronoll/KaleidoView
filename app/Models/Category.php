@@ -33,4 +33,9 @@ class Category extends Model
     {
         return static::where('name', 'like', '%' . $term . '%')->get();
     }
+    
+    public function getPostsByCategory()
+    {
+        return $this->posts()->get()->sortByDesc('created_at');
+        }
 }
