@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,7 @@ Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('c
 
 Route::get('/users/{name}',[UserController::class,'show_user']);
 
+Route::get('/categories/{category}',[CategoryController::class,'index'])->middleware('auth');
 Route::get('/categories/{category}/create',[PostController::class,'create'])->middleware('auth');
 Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
