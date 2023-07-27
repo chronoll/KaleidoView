@@ -37,4 +37,27 @@ class CategoryController extends Controller
         $category->fill($input)->save();
         return redirect('/categories/' . $category->id);
     }
+    
+    public function edit(Category $category)
+    {
+        if(Auth::id()!=$category->user_id){ //認証中UserのもつPostでない場合
+            return redirect('/timeline');
+        }
+
+        return view('edit_category',['category'=>$category]);
+    }
+
+    public function update(CategoryRequest $request,Category $category)
+    {
+        $input=$request['category'];
+        
+        if($request->file('image')){
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input+=['category_image'=>$image_url];
+        }
+        
+        $input+=['user_id'=>Auth::user()->id];
+        $category->fill($input)->save();
+        return redirect('/categories/' . $category->id);
+    }
 }
