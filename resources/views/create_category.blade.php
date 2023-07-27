@@ -15,7 +15,7 @@
         </div>
         <div class='explanation'>
             <h2>Explanation</h2>
-            <textarea name="category[category_explanation]" placeholder='本文を入力'></textarea>
+            <textarea name="category[category_explanation]" placeholder='カテゴリの説明を入力'></textarea>
         </div>
         <input type='submit' value='作成'/>
     </form>
