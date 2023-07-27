@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -22,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'nickname',
+        'user_image',
+        'self_introduction',
     ];
 
     /**
@@ -94,5 +98,10 @@ class User extends Authenticatable
     public static function searchByName($term)
     {
         return static::where('name', 'like', '%' . $term . '%')->get();
+    }
+    
+    public static function findUserByName($name)
+    {
+        return static::where('name', $name)->first();
     }
 }

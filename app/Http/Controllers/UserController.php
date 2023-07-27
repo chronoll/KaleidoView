@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Auth;
+use Cloudinary;
 
 class UserController extends Controller
 {
@@ -19,7 +21,7 @@ class UserController extends Controller
     
     public function show_user($name)
     {
-        $user = User::where('name', $name)->first();
+        $user = User::findUserByName($name);
         
         if($user){
             $categories=$user->categories;
@@ -34,4 +36,32 @@ class UserController extends Controller
         
         return redirect('/404');
     }
+    
+    public function edit($name)
+    {
+        $user = User::findUserByName($name);
+        
+        if(Auth::id()!=$user->id){
+            return redirect('/timeline');
+        }
+
+        return view('profile.edit_profile',['user'=>$user]);
+    }
+
+    public function update(UserRequest $request,$name)
+    {
+        $user=User::findUserByName($name);
+        
+        $input=$request['user'];
+        
+        if($request->file('image')){
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input+=['user_image'=>$image_url];
+        }
+        
+        $input+=['id'=>Auth::user()->id];
+        $user->fill($input)->save();
+        return redirect('/users/' . $name);
+    }
+
 }
