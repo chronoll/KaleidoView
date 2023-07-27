@@ -34,6 +34,9 @@ Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('c
 
 Route::get('/users/{name}',[UserController::class,'show_user']);
 
+Route::get('/users/{name}/edit',[UserController::class,'edit']);
+Route::put('/users/{name}',[UserController::class,'update']);
+
 Route::get('/categories/create',[CategoryController::class,'create'])->middleware('auth');
 Route::post('/categories',[CategoryController::class,'store'])->middleware('auth');
 
