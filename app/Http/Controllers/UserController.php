@@ -41,7 +41,7 @@ class UserController extends Controller
     {
         $user = User::findUserByName($name);
         
-        if(Auth::id()!=$user->id){ //認証中UserのもつPostでない場合
+        if(Auth::id()!=$user->id){
             return redirect('/timeline');
         }
 
