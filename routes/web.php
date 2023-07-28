@@ -26,6 +26,7 @@ Route::get('/test', [PostController::class,'test']);
 
 Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
 Route::get('/posts/{post}',[PostController::class,'show']);
+Route::delete('/posts/{post}',[PostController::class,'delete'])->middleware('auth');
 
 Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
 Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike');

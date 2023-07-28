@@ -75,5 +75,16 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
+    
+    public function delete(Post $post)
+    {
+        
+        if(Auth::id()!=$post->user_id){ //認証中UserのもつPostでない場合
+            return redirect('/timeline');
+        }
+        
+        $post->delete();
+        return redirect('/');
+    }
 
 }
