@@ -61,4 +61,11 @@ class Category extends Model
     {
         return $this->followers()->count();
     }
+    
+    public function getTotalLikesAttribute()
+    {
+        return $this->posts->sum(function($post){
+            return $post->likes->count();
+        });
+    }
 }

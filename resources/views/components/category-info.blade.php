@@ -6,7 +6,9 @@
     <h1>{{$category->name}}</h1>
     <div class='followers'>
         <p>Followers {{$category->followerCount}}</p>
-        <p>Likes</p>
+    </div>
+    <div class='total_likes'>
+        <p>Total likes: {{$category->totalLikes}}</p>
     </div>
     <div class='explanation'>
         <p>{{$category->category_explanation}}</p>
