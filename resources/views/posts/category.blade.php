@@ -2,6 +2,7 @@
     <x-slot name='header'>
         Category
     </x-slot>
+    <x-category-info :category='$category' />
     <div class='category'>
         <img src="{{ $category->category_image }}" alt="画像が読み込めません。"/>
         <h1>{{$category->name}}</h1>
