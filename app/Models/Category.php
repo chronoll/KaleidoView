@@ -62,7 +62,7 @@ class Category extends Model
         return $this->followers()->count();
     }
     
-    public function getTotalLikesAttribute()
+    public function getTotalLikesAttribute() //各投稿の総Like数を返す
     {
         return $this->posts->sum(function($post){
             return $post->likes->count();
