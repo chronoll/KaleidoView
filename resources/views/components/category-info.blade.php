@@ -17,4 +17,11 @@
     <div class='explanation'>
         <p>{{$category->category_explanation}}</p>
     </div>
+    <div class='edit'>
+        @if (Auth::id() == $category->user->id)
+        <a href='/'>Edit</a>
+        @else
+        <a href='/'>Follow</a>
+        @endif
+    </div>
 </div>
