@@ -21,4 +21,14 @@ class CommentController extends Controller
         return back();
         
     }
+    public function delete(Comment $comment)
+    {
+
+        if(Auth::id()!=$comment->user_id){ //認証中UserのもつCommentでない場合
+            return redirect('/timeline');
+        }
+
+        $comment->delete();
+        return redirect('/');
+    }
 }

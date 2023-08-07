@@ -55,3 +55,12 @@
         </form>
     </div>
 </x-app-layout>
+<script>
+function deleteComment(id){
+    'use strict'
+    if(confirm('コメントは復元できません\n本当に削除しますか?')){
+        document.getElementById(`form_${id}`).submit();
+        
+    }
+}
+</script>

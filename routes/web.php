@@ -32,6 +32,7 @@ Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
 Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike');
 
 Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
+Route::delete('/comments/{comment}',[CommentController::class,'delete'])->middleware('auth');
 
 Route::get('/users/{name}',[UserController::class,'show_user']);
 
