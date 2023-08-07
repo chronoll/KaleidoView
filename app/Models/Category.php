@@ -55,5 +55,10 @@ class Category extends Model
     public function getPostsByCategory()
     {
         return $this->posts()->get()->sortByDesc('created_at');
-        }
+    }
+    
+    public function getFollowerCountAttribute()
+    {
+        return $this->followers()->count();
+    }
 }
