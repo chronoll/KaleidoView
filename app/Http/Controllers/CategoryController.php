@@ -60,4 +60,15 @@ class CategoryController extends Controller
         $category->fill($input)->save();
         return redirect('/categories/' . $category->id);
     }
+    
+    public function delete(Category $category)
+    {
+
+        if(Auth::id()!=$category->user_id){ //認証中UserのもつCategoryでない場合
+            return redirect('/timeline');
+        }
+
+        $category->delete();
+        return redirect('/');
+    }
 }
