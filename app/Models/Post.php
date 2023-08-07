@@ -43,4 +43,11 @@ class Post extends Model
     {
         return static::where('title', 'like', '%' . $term . '%')->with('user','category')->get();
     }
+    
+    protected static function booted()
+    {
+        static::deleted(function ($post){
+            $post->comments()->delete();
+        });
+    }
 }
