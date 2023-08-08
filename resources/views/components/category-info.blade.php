@@ -22,7 +22,7 @@
     </div>
     <div class='edit'>
         @if (Auth::id() == $category->user->id)
-        <a href='/'>Edit</a>
+        <a href='{{route('categories.edit',$category->id)}}'>Edit</a>
         @else
             @if(Auth::user()->hasFollowed($category))
             <!--　フォロー解除 -->
