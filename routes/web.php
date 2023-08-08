@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RelationshipController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,9 @@ Route::delete('/posts/{post}',[PostController::class,'delete'])->middleware('aut
 
 Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
 Route::delete('/unlike/{post}', [PostController::class, 'unlike'])->name('unlike');
+
+Route::post('/follow/{category}',[RelationshipController::class,'follow'])->name('follow');
+Route::delete('/unfollow/{category}',[RelationshipController::class,'unfollow'])->name('unfollow');
 
 Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
 Route::delete('/comments/{comment}',[CommentController::class,'delete'])->middleware('auth');

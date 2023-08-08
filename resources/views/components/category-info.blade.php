@@ -21,7 +21,20 @@
         @if (Auth::id() == $category->user->id)
         <a href='/'>Edit</a>
         @else
-        <a href='/'>Follow</a>
+            @if(Auth::user()->hasFollowed($category))
+            <!--　フォロー解除 -->
+            <form method='POST' action='{{route('unfollow',$category)}}'>
+                @csrf
+                @method('DELETE')
+                <input type='submit' value='unfollow'/>
+            </form>
+            @else
+            <!--　フォロー -->
+            <form method='POST' action='{{route('follow',$category)}}'>
+                @csrf
+                <input type='submit' value='follow'/>
+            </form>
+            @endif
         @endif
     </div>
 </div>
