@@ -2,6 +2,7 @@
     <x-slot name='header'>
         Post
     </x-slot>
+    <x-category-info :category='$category' />
     <div class='post'>
         <div class='image'>
             <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>

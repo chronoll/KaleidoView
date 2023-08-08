@@ -55,5 +55,17 @@ class Category extends Model
     public function getPostsByCategory()
     {
         return $this->posts()->get()->sortByDesc('created_at');
-        }
+    }
+    
+    public function getFollowerCountAttribute()
+    {
+        return $this->followers()->count();
+    }
+    
+    public function getTotalLikesAttribute() //各投稿の総Like数を返す
+    {
+        return $this->posts->sum(function($post){
+            return $post->likes->count();
+        });
+    }
 }

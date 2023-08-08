@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
+use App\Models\Category;
 
 
 class User extends Authenticatable
@@ -93,6 +94,11 @@ class User extends Authenticatable
     {
         return $this->likes()->where('post_id', $post->id)->exists();
         
+    }
+    
+    public function hasFollowed(Category $category)
+    {
+        return $this->relationships()->where('category_id',$category->id)->exists();
     }
     
     public static function searchByName($term)

@@ -2,6 +2,7 @@
     <x-slot name='header'>
         Edit Post
     </x-slot>
+    <x-category-info :category='$category' />
     <h1>Edit your post</h1>
     <p>{{$category->name}}</p>
     <form action='/posts/{{$post->id}}' method='POST'>
