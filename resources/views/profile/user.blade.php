@@ -18,14 +18,21 @@
     <div class='categories'>
         @foreach($categories as $category)
         <div class='category'>
+            <a href='{{route('categories.show',$category->id)}}' style='text-decoration: none; color: inherit;'>
             <img src='{{$category->category_image}}'/>
             <h3>{{$category->name}}</h3>
             <div class='followers'>
                 <h3>Followers({{$followers[$category->id]->count()}})</h3>
             </div>
+            <div class='total_likes'>
+                <h3>Total likes: {{$category->totalLikes}}</h3>
+            </div>
+            </a>
             <div class='posts'>
                 @foreach($posts[$category->id]->sortByDesc('created_at')->take(3) as $post)
+                <a href='{{route('posts.show',$post->id)}}' style='text-decoration: none; color: inherit;'>
                 <img src='{{$post->post_image}}'/>
+                </a>
                 @endforeach
                 @if($posts[$category->id]->count()>3)
                 <small>+{{$posts[$category->id]->count()-3}}</small>
@@ -35,7 +42,7 @@
         @endforeach
         <div class='new_category'>
             @if (Auth::id() == $user->id)
-            <a href="/categories/edit">New Category</a>
+            <a href='{{route('categories.create')}}'>New Category</a>
         @endif
         </div>
     </div>

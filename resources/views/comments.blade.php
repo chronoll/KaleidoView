@@ -1,6 +1,10 @@
 <div id="comment-{{ $comment->id }}" style="margin-left: {{ $margin }}px;">
-    <img src="{{ $comment->user->user_image }}" alt="User image">
-    <strong>{{ $comment->user->name }}</strong>
+    <div class='user'>
+        <a href='{{route('users.show',$comment->user->name)}}' style='text-decoration: none; color: inherit;'>
+        <img src="{{ $comment->user->user_image }}" alt="User image">
+        <strong>{{ $comment->user->name }}</strong>
+        </a>
+    </div>
     <p>{{ $comment->content }}</p>
     <small>{{ $comment->created_at->format('Y-m-d H:i') }}</small>
     

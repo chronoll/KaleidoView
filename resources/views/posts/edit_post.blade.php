@@ -31,7 +31,7 @@
               <button type='button' onclick='deletePost({{$post->id}})'>delete</button>
           </form>
     <div class='footer'>
-        <a href='../'>戻る</a>
+        <a href='{{route('posts.show',$post->id)}}'>戻る</a>
     </div>
 </x-app-layout>
 <script>

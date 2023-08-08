@@ -8,16 +8,18 @@
         <h1>{{$category->name}}</h1>
         <div class='new_post'>
             @if(Auth::id()==$category->user_id)
-            <a href='create'>+New Post</a>
+            <a href='{{route('posts.create',$category->id)}}'>+New Post</a>
             @endif
         </div>
     </div>
     <div class='posts'>
         @foreach ($posts as $post)
         <div class='post'>
+            <a href='{{route('posts.show',$post->id)}}' style='text-decoration: none; color: inherit;'>
             <div class='image'>
                 <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
             </div>
+            </a>
          </div>
         @endforeach
     </div>

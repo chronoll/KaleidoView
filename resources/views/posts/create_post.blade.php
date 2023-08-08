@@ -23,7 +23,7 @@
         <input type='submit' value='投稿'/>
     </form>
     <div class='footer'>
-        <a href='../'>戻る</a>
+        <a href='{{route('categories.show',$category->id)}}'>戻る</a>
     </div>
 </x-app-layout>
 <script>

@@ -20,7 +20,7 @@
         <input type='submit' value='作成'/>
     </form>
     <div class='footer'>
-        <a href='../'>戻る</a>
+        <a href='{{route('users.show',Auth::user()->name)}}' style='text-decoration: none; color: inherit;'>戻る</a>
     </div>
 </x-app-layout>
 <script>
