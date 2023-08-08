@@ -1,12 +1,15 @@
 <div>
     <div class='user'>
         <div class='user_image'>
+            <a href='{{route('users.show',$category->user->name)}}' style='text-decoration: none; color: inherit;'>
             <img src="{{ $category->user->user_image }}" alt="画像が読み込めません。"/>
+            </a>
         </div>
         <div class='user_name'>
             <p>{{'@'.$category->user->name}}</p>
         </div>
     </div>
+    <a href='{{route('categories.show',$category->id)}}' style='text-decoration: none; color: inherit;'>
     <h1>{{$category->name}}</h1>
     <div class='followers'>
         <p>Followers {{$category->followerCount}}</p>
@@ -37,4 +40,5 @@
             @endif
         @endif
     </div>
+    </a>
 </div>
