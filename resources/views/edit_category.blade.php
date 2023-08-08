@@ -2,6 +2,7 @@
     <x-slot name='header'>
         Edit Category
     </x-slot>
+    <x-category-info :category='$category' />
     <h1>Edit your category</h1>
     <form action='/categories/{{$category->id}}' method='POST' enctype='multipart/form-data'>
         @csrf

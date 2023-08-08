@@ -2,6 +2,7 @@
     <x-slot name='header'>
         New Post
     </x-slot>
+    <x-category-info :category='$category' />
     <h1>Create a new post</h1>
     <p>{{$category->name}}</p>
     <form action='/posts' method='POST' enctype='multipart/form-data'>
