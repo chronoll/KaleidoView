@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::get('/test', [PostController::class,'test']);
 
 Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
-Route::get('/posts/{post}',[PostController::class,'show']);
+Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show')->middleware('auth');
 Route::delete('/posts/{post}',[PostController::class,'delete'])->middleware('auth');
 
 Route::post('/like/{post}', [PostController::class, 'like'])->name('like');
@@ -38,7 +38,7 @@ Route::delete('/unfollow/{category}',[RelationshipController::class,'unfollow'])
 Route::post('/posts/{post}/comment',[CommentController::class,'store'])->name('comment');
 Route::delete('/comments/{comment}',[CommentController::class,'delete'])->middleware('auth');
 
-Route::get('/users/{name}',[UserController::class,'show_user']);
+Route::get('/users/{name}',[UserController::class,'show_user'])->name('users.show')->middleware('auth');
 
 Route::get('/users/{name}/edit',[UserController::class,'edit']);
 Route::put('/users/{name}',[UserController::class,'update']);
@@ -50,7 +50,7 @@ Route::get('/categories/{category}/edit',[CategoryController::class,'edit'])->mi
 Route::put('/categories/{category}',[CategoryController::class,'update'])->middleware('auth');
 Route::delete('/categories/{category}',[CategoryController::class,'delete'])->middleware('auth');
 
-Route::get('/categories/{category}',[CategoryController::class,'index'])->middleware('auth');
+Route::get('/categories/{category}',[CategoryController::class,'index'])->name('categories.show')->middleware('auth');
 Route::get('/categories/{category}/create',[PostController::class,'create'])->middleware('auth');
 Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
