@@ -5,7 +5,7 @@
             <img src="{{ $category->user->user_image }}" alt="画像が読み込めません。"/>
             </a>
         </div>
-        <div class='user_name'>
+        <div class="border border-red-500">
             <p>{{'@'.$category->user->name}}</p>
         </div>
     </div>
