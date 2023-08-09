@@ -87,5 +87,10 @@ class PostController extends Controller
         $post->delete();
         return redirect('/');
     }
+    
+    public function test(Post $post)
+    {
+        return view('test');
+    }
 
 }
