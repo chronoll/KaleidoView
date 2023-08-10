@@ -2,16 +2,98 @@
     <x-slot name='header'>
         Timeline
     </x-slot>
-    
-    <svg class='w-20'xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-    </svg>
-    <svg class='w-20 fill-current text-pink-300'xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-    </svg>
-    <svg class='w-20 stroke-current text-blue-300'xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-    </svg>
+    <div class="flex">
+    <!-- サイドバー -->
+    <div class="bg-gray-100 p-4 flex flex-col">
+        <div class="sticky top-0 z-10">
+        <!-- 上の文章 -->
+        <a href='{{route('categories.show',1)}}' class="hover:bg-gray-300 text-2xl p-4 mb-4 border-4 border-double border-gray-500 flex justify-center items-center rounded-full">
+            音楽
+        </a>
 
-    
+        <!-- 画像と隣接する文章 -->
+        <div class="flex justify-between mt-2 mx-2 items-center">
+            <!-- 画像 -->
+            <a href='{{route('users.show','Hanako')}}'>
+            <img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1690526149/aye9tbymcqemie2uqbeu.png" alt="説明" class="w-20 h-20  mr-4 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400">
+            </a>
+            <!-- 文章 -->
+            <a href='{{route('users.show','Hanako')}}' class="flex-1 font-bold hover:underline text-center">
+                @Hanakooooo
+            </a>
+        </div>
+        
+        <div class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 rounded-full w-full mt-4 mx-1 mb-3">
+            <a href='{{route('categories.edit',1)}}'>Edit</a>
+        </div>
+        
+        <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
+            <p>Followers: 50</p>
+        </div>
+        <div class='mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2'>
+            <p>Total likes: 100</p>
+        </div>
+        
+        <div class='mt-4 border-4 border-double border-gray-500 rounded-lg p-2'>
+            写真撮影は私の人生に色と魔法を与えてくれる素晴らしい趣味です。一瞬を切り取り、感動や美しさを永遠に残すことができます。光の魔法を使い、色彩と構図を織り交ぜながら、美しいコンポジションを追求しています。写真は私の心の中で語り手となり、感情や思い出を表現する窓となっています。一緒に写真の魔法に浸り、新たな世界を切り拓きましょう。
+            
+        </div>
+        </div>
+        
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="flex-1 bg-gray-200 p-4">
+        メインコンテンツ
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+        あ<br>
+    </div>
+    </div>
 </x-app-layout>
+
