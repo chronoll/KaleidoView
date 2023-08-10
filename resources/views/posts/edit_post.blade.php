@@ -3,6 +3,7 @@
         Edit Post
     </x-slot>
     <x-category-info :category='$category' />
+    <div class='bg-gray-200 p-4'>
     <h1>Edit your post</h1>
     <p>{{$category->name}}</p>
     <form action='/posts/{{$post->id}}' method='POST'>
@@ -32,6 +33,7 @@
           </form>
     <div class='footer'>
         <a href='{{route('posts.show',$post->id)}}'>戻る</a>
+    </div>
     </div>
 </x-app-layout>
 <script>
