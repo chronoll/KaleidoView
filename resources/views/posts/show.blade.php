@@ -3,6 +3,7 @@
         Post
     </x-slot>
     <x-category-info :category='$category' />
+    <div class='bg-gray-200 p-4'>
     <div class='post'>
         <div class='image'>
             <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
@@ -54,6 +55,7 @@
             <button type='submit'>送信</button>
             <button id='cancelReply' style='display: none;'>返信をやめる</button>
         </form>
+    </div>
     </div>
 </x-app-layout>
 <script>

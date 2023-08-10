@@ -3,6 +3,7 @@
         New Post
     </x-slot>
     <x-category-info :category='$category' />
+    <div class='bg-gray-200 p-4'>
     <h1>Create a new post</h1>
     <p>{{$category->name}}</p>
     <form action='/posts' method='POST' enctype='multipart/form-data'>
@@ -24,6 +25,7 @@
     </form>
     <div class='footer'>
         <a href='{{route('categories.show',$category->id)}}'>戻る</a>
+    </div>
     </div>
 </x-app-layout>
 <script>

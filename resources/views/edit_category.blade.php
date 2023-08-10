@@ -3,6 +3,7 @@
         Edit Category
     </x-slot>
     <x-category-info :category='$category' />
+    <div class='bg-gray-200 p-4'>
     <h1>Edit your category</h1>
     <form action='/categories/{{$category->id}}' method='POST' enctype='multipart/form-data'>
         @csrf
@@ -28,6 +29,7 @@
     </form>
     <div class='footer'>
         <a href='../'>戻る</a>
+    </div>
     </div>
 </x-app-layout>
 <script>

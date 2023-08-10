@@ -3,7 +3,7 @@
         Category
     </x-slot>
     <x-category-info :category='$category' />
-    <div class='category'>
+    <div class='bg-gray-200 p-4'>
         <img src="{{ $category->category_image }}" alt="画像が読み込めません。"/>
         <h1>{{$category->name}}</h1>
         <div class='new_post'>
