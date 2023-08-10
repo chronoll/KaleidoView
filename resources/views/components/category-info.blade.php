@@ -44,7 +44,7 @@
         @endif
         
         <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
-            Followers {{$category->followerCount}}
+            Followers: {{$category->followerCount}}
         </div>
         <div class='mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2'>
             Total likes: {{$category->totalLikes}}
