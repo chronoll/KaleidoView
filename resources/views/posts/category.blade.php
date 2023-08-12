@@ -3,24 +3,23 @@
         Category
     </x-slot>
     <x-category-info :category='$category' />
-    <div class='bg-gray-200 p-4'>
-        <img src="{{ $category->category_image }}" alt="画像が読み込めません。"/>
-        <h1>{{$category->name}}</h1>
-        <div class='new_post'>
-            @if(Auth::id()==$category->user_id)
-            <a href='{{route('posts.create',$category->id)}}'>+New Post</a>
-            @endif
-        </div>
-    </div>
-    <div class='posts'>
+    
+    
+    
+    <div class="flex-1 bg-gray-200 p-4">
+        @if(Auth::id()==$category->user_id)
+    <a href='{{route('posts.create',$category->id)}}' class="bg-white hover:bg-gray-300 text-2xl p-4 mb-4 border-4 border-double border-gray-500 flex justify-center items-center rounded-full">
+        +New Post
+    </a>
+    @endif
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach ($posts as $post)
-        <div class='post'>
+        <div class='relative aspect-w-1 aspect-h-1 w-full h-full'>
             <a href='{{route('posts.show',$post->id)}}' style='text-decoration: none; color: inherit;'>
-            <div class='image'>
-                <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
-            </div>
+            <img src="{{ $post->post_image }}" alt="画像が読み込めません。" class="w-full h-full object-cover"/>
             </a>
-         </div>
+        </div>
         @endforeach
     </div>
+</div>
 </x-app-layout>
