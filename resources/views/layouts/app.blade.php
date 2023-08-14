@@ -28,7 +28,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class='flex'>
+            <main class='md:flex'>
                 {{ $slot }}
             </main>
         </div>
