@@ -10,21 +10,21 @@
             音楽
         </a>
 
-        <!-- 画像と隣接する文章 -->
-        <div class="flex justify-between mt-2 mx-2 items-center">
-            <!-- 画像 -->
-            <a href='{{route('users.show','Hanako')}}'>
-            <img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1690526149/aye9tbymcqemie2uqbeu.png" alt="説明" class="w-20 h-20  mr-4 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400">
-            </a>
-            <!-- 文章 -->
-            <a href='{{route('users.show','Hanako')}}' class="flex-1 font-bold hover:underline text-center">
-                @Hanakooooo
-            </a>
-        </div>
-
-        <div class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 rounded-full w-full mt-4 mx-1 mb-3">
-            <a href='{{route('categories.edit',1)}}'>Edit</a>
-        </div>
+        <!-- 画像、@Hanakooooo、そしてEditボタン -->
+            <div class="flex md:justify-between items-center flex-col md:flex-row">
+                <!-- 画像 -->
+                <a href='{{route('users.show','Hanako')}}' class="mb-2">
+                    <img src="..." alt="説明" class="w-20 h-20 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400">
+                </a>
+                <!-- @Hanakoooooの文章 -->
+                <a href='{{route('users.show','Hanako')}}' class="flex-1 font-bold hover:underline text-center mb-2 md:mb-0 md:mr-4">
+                    @Hanakooooo
+                </a>
+                <!-- Editボタン -->
+                <div class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 rounded-full w-full md:w-auto">
+                    <a href='{{route('categories.edit',1)}}'>Edit</a>
+                </div>
+            </div>
 
         <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
             <p>Followers: 50</p>
