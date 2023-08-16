@@ -40,7 +40,7 @@ Route::delete('/comments/{comment}',[CommentController::class,'delete'])->middle
 
 Route::get('/users/{name}',[UserController::class,'show_user'])->name('users.show')->middleware('auth');
 
-Route::get('/users/{name}/edit',[UserController::class,'edit']);
+Route::get('/users/{name}/edit',[UserController::class,'edit'])->name('users.edit')->middleware('auth');
 Route::put('/users/{name}',[UserController::class,'update']);
 
 Route::get('/categories/create',[CategoryController::class,'create'])->name('categories.create')->middleware('auth');
