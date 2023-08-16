@@ -7,7 +7,7 @@
     <div class="absolute top-1.5 right-0">
         @if (Auth::id() == $user->id)
         <a href="{{route('users.edit',$user->name)}}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Edit</a>
-        @endif>
+        @endif
     </div>
     <div class="block bg-gray-200">
     <!-- User information -->
