@@ -15,7 +15,7 @@
     </div>
 
     <div class="p-4">
-        <div class="flex items-center mb-2 space-x-4"> <!-- mb-2を追加して、上の行と下の行の間にマージンを追加します -->
+        <div class="flex items-center mb-2 space-x-4">
             <h1 class="text-gray-600 text-3xl">{{$category->name}}</h1>
             <p class="text-gray-400">{{'@'.$category->user->name}}</p>
         </div>
@@ -31,7 +31,7 @@
 
         clickableCards.forEach(card => {
             card.addEventListener('click', function (event) {
-                if (!event.target.closest('a')) {  // リンク内のクリックを無視
+                if (!event.target.closest('a')) { 
                     window.location.href = card.getAttribute('data-href');
                 }
             });
