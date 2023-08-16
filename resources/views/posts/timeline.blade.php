@@ -20,26 +20,34 @@
         @endforeach
         </div>
     </div>
-    <div class='posts'>
-        @foreach ($posts as $post)
-        <div class='post'>
-            <div class='user'>
-                <a href='{{route('users.show',$post->user->name)}}' style='text-decoration: none; color: inherit;'>
-                <img src='{{$post->user->user_image}}'/>
-                </a>
-            </div>
-            <div class='category'>
-                <a href='{{route('categories.show',$post->category->id)}}' style='text-decoration: none; color: inherit;'>
-                <p class='name'>{{'@'.$post->user->name}}-{{$post->category->name}}</p>
-                </a>
-            </div>
-            <a href='{{route('posts.show',$post->id)}}' style='text-decoration: none; color: inherit;'>
-            <h2 class='title'>{{$post->title}}</h2>
-            <div class='image'>
-                <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
-            </div>
-            </a>
-         </div>
-        @endforeach
+<div class='flex-1 p-4 bg-gray-200'>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+    @foreach ($posts as $post)
+        <div>
+        
+                <div class="bg-white rounded-lg shadow-lg ease-in transition duration-200 transform hover:scale-105">
+                    <div class="flex items-center mb-2 px-2 pt-3 pb-1">
+                        <a href='{{route('users.show',$post->user->name)}}' class="w-8 h-8">
+                        <img src="{{$post->user->user_image}}" class="w-8 h-8 ml-1 mr-4 rounded-full overflow-full hover:opacity-80 ring ring-gray-400">
+                        </a>
+                        <a href="{{route('categories.show',$post->category->id)}}" class="text-gray-600 hover:underline ml-4">{{$post->category->name}}</p>
+                        <a href='{{route('users.show',$post->user->name)}}' class="text-gray-400 hover:underline">-{{'@'.$post->user->name}}</a>
+                    </div>
+                    <div class='relative aspect-w-1 aspect-h-1 w-full h-full'>
+                        <a href='{{route('posts.show',$post->id)}}'>
+                            <img src="{{ $post->post_image }}" alt="画像が読み込めません。" class="w-full h-full object-cover"/>
+                        </a>
+                    </div>
+                    <a href='{{route('posts.show',$post->id)}}'>
+                    <div class="flex items-center mb-2 space-x-4 px-2 pt-3 pb-1">
+                        <h1 class="text-gray-600 truncate w-full overflow-hidden whitespace-nowrap">{{$post->title}}</h1>
+                    </div>
+                    </a>
+                </div>
+            
+        </div>
+    @endforeach
     </div>
+</div>
+
 </x-app-layout>
