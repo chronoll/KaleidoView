@@ -3,51 +3,68 @@
         Category
     </x-slot>
     <!-- サイドバー -->
-    <div class="bg-gray-100 w-1/4 p-4 flex flex-col flex-shrink-0">
+    <div class="bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0 md:w-50">
         <div class="sticky top-0 z-10">
         <!-- 上の文章 -->
-        <a href='{{route('categories.show',1)}}' class="hover:bg-gray-300 text-2xl p-4 mb-4 border-4 border-double border-gray-500 flex justify-center items-center rounded-full">
-            音楽
-        </a>
-
-        <!-- 画像、@Hanakooooo、そしてEditボタン -->
-            <div class="flex md:justify-between items-center flex-col md:flex-row">
-                <!-- 画像 -->
-                <a href='{{route('users.show','Hanako')}}' class="mb-2">
-                    <img src="..." alt="説明" class="w-20 h-20 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400">
-                </a>
-                <!-- @Hanakoooooの文章 -->
-                <a href='{{route('users.show','Hanako')}}' class="flex-1 font-bold hover:underline text-center mb-2 md:mb-0 md:mr-4">
-                    @Hanakooooo
-                </a>
-                <!-- Editボタン -->
-                <div class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 rounded-full w-full md:w-auto">
-                    <a href='{{route('categories.edit',1)}}'>Edit</a>
-                </div>
-            </div>
-
-        <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
-            <p>Followers: 50</p>
+        <div class="text-2xl p-4 mb-4 flex justify-center items-center rounded-full">
+            Following
         </div>
-        <div class='mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2'>
-            <p>Total likes: 100</p>
-        </div>
-
-        <div class='mt-4 border-4 border-double border-gray-500 rounded-lg p-2'>
-            写真撮影は私の人生に色と魔法を与えてくれる素晴らしい趣味です。一瞬を切り取り、感動や美しさを永遠に残すことができます。光の魔法を使い、色彩と構図を織り交ぜながら、美しいコンポジションを追求しています。写真は私の心の中で語り手となり、感情や思い出を表現する窓となっています。一緒に写真の魔法に浸り、新たな世界を切り拓きましょう。
-        </div>
+    <a href="/">
+    <div class="h-24 bg-white rounded-lg shadow-lg ease-in transition duration-200 transform hover:scale-105 mb-4">
+    <div class="h-12 w-full bg-gray-200 rounded-t-lg flex flex-col justify-between p-4 bg-cover bg-center" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png')">
+    </div>
+        <div class="flex items-center mb-2 space-x-4 px-2 pt-3 pb-1">
+            <h1 class="text-gray-600">音楽</h1>
+            <p class="text-gray-400 text-sm">@Hanako</p>
         </div>
     </div>
+    </a>
+    
+        
+    </div>
+    </div>
+
     <div class="flex-1 bg-blue-500 p-4">
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
     @for ($i = 0; $i < 40; $i++)
-    <div class="relative aspect-w-1 aspect-h-1">
-
-        <!-- もしくはUnsplash Sourceを使用 -->
-        <img src="https://source.unsplash.com/random/200x200?sig={{ $i }}" alt="Random Image" class="absolute inset-0 w-full h-full">
+    <div class="relative aspect-w-1 aspect-h-1 mb-24">
+        <a href="/">
+            <div class="bg-white rounded-lg shadow-lg ease-in transition duration-200 transform hover:scale-105">
+                <div class="flex items-center mb-2 px-2 pt-3 pb-1">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="説明" class="w-8 h-8 ml-1 mr-4 rounded-full overflow-full hover:opacity-80 ring ring-gray-400">
+                    <p class="text-gray-600">Music</p>
+                    <p class="text-gray-400">-@Hanako</p>
+                </div>
+                <div class="aspect-content overflow-hidden">
+                    <img class="object-cover w-full h-full" src="https://source.unsplash.com/random/200x200?sig={{ $i }}" alt="Image {{ $i }}">
+                </div>
+                <div class="flex items-center mb-2 space-x-4 px-2 pt-3 pb-1">
+                    <h1 class="text-gray-600">タイトル1</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="relative aspect-w-1 aspect-h-1 mb-24">
+        <a href="/">
+            <div class="bg-white rounded-lg shadow-lg ease-in transition duration-200 transform hover:scale-105">
+                <div class="flex items-center mb-2 px-2 pt-3 pb-1">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="説明" class="w-8 h-8 ml-1 mr-4 rounded-full overflow-full hover:opacity-80 ring ring-gray-400">
+                    <p class="text-gray-600">Music</p>
+                    <p class="text-gray-400">-@Hanako</p>
+                </div>
+                <div class="aspect-content overflow-hidden">
+                    <img class="object-cover w-full h-full" src="https://res.cloudinary.com/dig0xnvus/image/upload/v1689078150/picture_1.jpg" alt="Image {{ $i }}">
+                </div>
+                <div class="flex items-center mb-2 space-x-4 px-2 pt-3 pb-1">
+                    <h1 class="text-gray-600">タイトル1</h1>
+                </div>
+            </div>
+        </a>
     </div>
     @endfor
 </div>
+
 </div>
     
     
