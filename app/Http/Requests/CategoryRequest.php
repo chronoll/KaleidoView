@@ -16,7 +16,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'category.name'=>'required|string|max:20',
-            'image' => 'nullable|mimes:jpg,jpeg,png,gif,svg,webp',
+            //'image' => 'nullable|mimes:jpg,jpeg,png,gif,svg,webp',
             'category.category_explanation'=>'nullable|string|max:200',
         ];
     }
