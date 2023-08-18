@@ -17,7 +17,7 @@ class PostRequest extends FormRequest
             'post.category_id' => 'required|integer|exists:categories,id',
             'post.title' => 'required|string|max:50',
             'post.body' => 'required|string|max:2000',
-            'cropped_image' => 'required',
+            //'cropped_image' => 'required',
         ];
             
         if ($this->isMethod('put')) {
