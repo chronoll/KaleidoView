@@ -7,7 +7,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Http\Requests\PostRequest;
 use Auth;
-use Cloudinary;
+use App\Http\Controllers\Controller;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class PostController extends Controller
 {
@@ -49,7 +50,7 @@ class PostController extends Controller
         return view('posts.create_post',['category'=>$category]);
     }
     
-    public function store(PostRequest $request,Post $post)
+    public function store1(PostRequest $request,Post $post)
     {
         $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
         
@@ -59,6 +60,25 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
+    public function store(PostRequest $request, Post $post)
+{
+    // cropped_imageからBase64データを取得
+    $base64_image = $request->input('cropped_image');
+
+    // 不要な部分を削除してBase64データだけを取得
+    list($type, $base64_image) = explode(';', $base64_image);
+    list(, $base64_image) = explode(',', $base64_image);
+
+    // Base64データをCloudinaryにアップロード
+    $uploaded_image = Cloudinary::upload("data:" . $type . ";base64," . $base64_image);
+    $image_url = $uploaded_image->getSecurePath();
+
+    $input = $request['post'];
+    $input += ['user_id' => Auth::user()->id];
+    $input += ['post_image' => $image_url];
+    $post->fill($input)->save();
+    return redirect('/posts/' . $post->id);
+}
     
     public function edit(Post $post)
     {
