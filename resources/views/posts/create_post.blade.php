@@ -51,48 +51,59 @@
     let croppieInstance = null;
 
     fileInput.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                if (croppieInstance) {
-                    croppieInstance.destroy();
-                }
-                croppieInstance = new Croppie(croppieElement, {
-                    viewport: {
-                        width: 200,
-                        height: 200,
-                        type: 'square'
-                    },
-                    boundary: {
-                        width: 300,
-                        height: 300
-                    }
-                });
-                croppieInstance.bind({
-                    url: event.target.result
-                });
+    console.log("File input changed!");
+
+    // トリミング後の画像プレビューをクリア
+    document.querySelector('.preview-cropped-image').innerHTML = "";
+
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            if (croppieInstance) {
+                croppieInstance.destroy();
+            }
+            croppieInstance = new Croppie(croppieElement, {
+                viewport: {
+                    width: 500,
+                    height: 500,
+                    type: 'square'
+                },
+                boundary: {
+                    width: 700,
+                    height: 700
+                },
+                enforceBoundary: true
+            });
+            croppieInstance.bind({
+                url: event.target.result
+            }).then(function() {
                 cropImageArea.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+            });
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
 
     document.getElementById('crop-button').addEventListener('click', function() {
         croppieInstance.result('base64').then(function(base64) {
         console.log(base64);
             croppedImageInput.value = base64; // トリミング後の画像データをフィールドにセット
-            fileInput.value = ""; // トリミング前の画像データをクリア
             document.querySelector('.preview-cropped-image').innerHTML = `<img src="${base64}" alt="Cropped Image" />`;
             cropImageArea.style.display = 'none';
         });
     });
 
     document.getElementById('reset-file').addEventListener('click', () => {
-        fileInput.value = "";
-        cropImageArea.style.display = 'none';
-        if (croppieInstance) {
-            croppieInstance.destroy();
-        }
-    });
+    fileInput.value = "";
+    cropImageArea.style.display = 'none';
+    if (croppieInstance) {
+        croppieInstance.destroy();
+        croppieInstance = null; // 破棄後にnullを代入して明示的にインスタンスをリセット
+    }
+    document.querySelector('.preview-cropped-image').innerHTML = "";
+    croppedImageInput.value = "";
+});
 </script>
