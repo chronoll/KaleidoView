@@ -55,20 +55,26 @@
     </div>
     
     <div class='comments'>
-    <h3>Comments ({{ $comments->count() }})</h3>
+    <div class="text-2xl text-gray-800">Comments ({{ $comments->count() }})</div>
     @foreach ($comments as $comment)
         @include('comments', ['comment' => $comment, 'margin' => 0])
     @endforeach
     </div>
     <div id='originalFormLocation'>
-        <img src="{{ Auth::user()->user_image }}" alt="User image">
         <form class='post_comment' method='POST' action='{{route('comment',$post)}}'>
             @csrf
-            <textarea name='content' placeholder='コメントを入力...'>{{old('content')}}</textarea>
-            <input type="hidden" name="parent_comment_id" id="parentCommentIdField" value="">  
-            <p class='content_error' style='color:red'>{{$errors->first('content')}}</p>
-            <button type='submit'>送信</button>
-            <button id='cancelReply' style='display: none;'>返信をやめる</button>
+            <div class="w-2/3 h-40 relative mt-8">
+                <div class="flex">
+                <img src="{{ Auth::user()->user_image }}" class="w-12 h-12 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400" alt="User image">
+                <textarea name='content' placeholder='コメントを入力' class="w-full h-20 border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50"></textarea>
+                <input type="hidden" name="parent_comment_id" id="parentCommentIdField" value="">  
+                <p class='content_error' style='color:red'>{{$errors->first('content')}}</p>
+                </div>
+                <div class="absolute top-24 right-1 flex flex-row-reverse mt-2">
+                    <button type='submit' class="ml-2 bg-green-500 text-white p-1.5 rounded-lg hover:bg-green-600">送信</button>
+                    <button id='cancelReply' style='display: none;' class="bg-gray-500 text-white p-1.5 rounded-lg hover:bg-gray-600">返信をやめる</button>
+                </div>
+            </div>
         </form>
     </div>
     </div>

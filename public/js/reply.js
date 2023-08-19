@@ -18,6 +18,7 @@ window.onload = function() {
 
         // キャンセルボタンを非表示
         cancelReplyButton.style.display = 'none';
+        
     });
 
     document.querySelectorAll('.reply-button').forEach(function (button) {
@@ -36,6 +37,8 @@ window.onload = function() {
 
             // キャンセルボタンを表示
             cancelReplyButton.style.display = 'block';
+            
+            
         });
     });
 }
