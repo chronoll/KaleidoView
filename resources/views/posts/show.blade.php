@@ -55,7 +55,7 @@
     </div>
     
     <div class='comments'>
-    <div class="text-2xl text-gray-800">Comments ({{ $comments->count() }})</div>
+    <div class="text-2xl text-gray-800">Comments ({{ $post->commentCount }})</div>
     @foreach ($comments as $comment)
         @include('comments', ['comment' => $comment, 'margin' => 0])
     @endforeach
