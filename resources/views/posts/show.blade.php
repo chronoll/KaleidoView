@@ -44,7 +44,7 @@
                 <p class="uppercase text-sm bg-gray-100 p-0.5 border-gray-500 border rounded text-gray-700 mb-1">作成日時:{{$post->created_at}}</p>
             </div>
         </div>
-        <div class='mt-4'>
+        <div class='mt-4 text-left w-full'>
             <p>{{$post->body}}</p>
         </div>
         </div>
