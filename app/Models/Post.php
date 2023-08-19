@@ -50,4 +50,9 @@ class Post extends Model
             $post->comments()->delete();
         });
     }
+    
+    public function getCommentCountAttribute()
+    {
+        return $this->comments()->count();
+    }
 }

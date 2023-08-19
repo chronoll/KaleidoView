@@ -1,24 +1,33 @@
-<div id="comment-{{ $comment->id }}" style="margin-left: {{ $margin }}px;">
-    <div class='user'>
-        <a href='{{route('users.show',$comment->user->name)}}' style='text-decoration: none; color: inherit;'>
-        <img src="{{ $comment->user->user_image }}" alt="User image">
-        <strong>{{ $comment->user->name }}</strong>
-        </a>
+<div class="w-2/3" style="margin-left: {{ $margin ?? 0 }}px;">
+<div id="comment-{{ $comment->id }}" class="w-full bg-white shadow-lg rounded my-4 p-4" >
+    <div class='flex'>
+        <div class="mr-4">
+            <a href='{{route('users.show',$comment->user->name)}}'>
+            <img src="{{ $comment->user->user_image }}" class="w-12 h-12 rounded-full overflow-full hover:opacity-80 ring-4 ring-gray-400" alt="User image">
+            <div class="text-sm text-gray-800 text-center mt-2 hover:opacity-80">{{ $comment->user->nickname }}</div>
+            </a>
+        </div>
+        <div class="flex-1 flex items-center mt-2">
+            <p class="">{{ $comment->content }}</p>
+        </div>
     </div>
-    <p>{{ $comment->content }}</p>
-    <small>{{ $comment->created_at->format('Y-m-d H:i') }}</small>
-    
-    <!-- 返信ボタンの追加 -->
-    <button class="reply-button" data-comment-id="{{ $comment->id }}">返信</button>
+    <div class="flex flex-row-reverse">
+        <small>{{ $comment->created_at->format('Y-m-d H:i') }}</small>
+    </div>
+</div>
+<div class="flex flex-row-reverse"><!-- 返信ボタンの追加 -->
+    <button class="reply-button bg-gray-500 text-white p-1.5 rounded-lg hover:bg-gray-600" data-comment-id="{{ $comment->id }}">返信</button>
     <form action='/comments/{{$comment->id}}' id='form_{{$comment->id}}'method='POST'>
         @csrf
         @method('DELETE')
         @if(Auth::id()==$comment->user_id)
-        <button type='button' onclick='deleteComment({{$comment->id}})'>delete</button>
+        <button type='button' class="bg-red-400 text-white p-1.5 rounded-lg hover:bg-red-500 mr-2" onclick='deleteComment({{$comment->id}})'>delete</button>
         @endif
     </form>
-    @foreach($comment->children as $childComment)
-        @include('comments', ['comment' => $childComment, 'margin' => $margin + 40])
-    @endforeach
 </div>
-<script src="{{ asset('js/reply.js') }}"></script>  <!-- パスの変更 -->
+</div>
+@foreach($comment->children as $childComment)
+    @include('comments', ['comment' => $childComment, 'margin' => ($margin ?? 0) + 40])
+@endforeach
+
+<script src="{{ asset('js/reply.js') }}"></script>
