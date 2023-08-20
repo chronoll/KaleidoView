@@ -7,25 +7,36 @@
         <span class="text-xl">Search</span>
         </div>
     </x-slot>
+    <div class="bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0 md:w-50">
     <div class='form-wrapper'>
-        <form action='/search' method='GET'>
-            <div class='form-group'>
-                <label for='term'>Search:</label>
-                <input type='text' name='term' placeholder='Search'>
+    <form action='/search' method='GET' id='searchForm'>
+        <div class='form-group'>
+            <input type='text' name='term' id="term" placeholder='キーワードを入力' class="border-0 outline-none mt-2 placeholder-gray-500 placeholder-opacity-50 w-full p-2">
+        </div>
+        <div class='form-group flex  justify-between mt-4'>
+            <div class="items-start">
+                <div>            
+                <input type="radio" id="post" name="type" value="post" checked>
+                <label for="post">Post</label>
+                </div>
+                <div>  
+                <input type="radio" id="category" name="type" value="category">
+                <label for="category">Category</label>
+                </div>
+                <div>  
+                <input type="radio" id="user" name="type" value="user">
+                <label for="user">User</label>
+                </div>
             </div>
-            <div class='form-group'>
-                <label for='type'>Search Type:</label>
-                <select class='form-control' name='type'>
-                    <option value='post'>Post</option>
-                    <option value='category'>Category</option>
-                    <option value='user'>User</option>
-                </select>
+            <div class='form-group flex items-end'>
+                <button type='submit' class='button bg-blue-500 text-white mt-2 px-4 py-2 rounded-md hover:bg-blue-600'>検索</button>
             </div>
-            <div class='form-group'>
-                <button type='submit' class='button'>Search</button>
-            </div>
-        </form>
+        </div>
+        
+    </form>
+</div>
     </div>
+    <div class='flex-1 p-4 bg-gray-200'>
     <div class='search-results'>
         @if(isset($results))
             <h2>Results</h2>
@@ -88,4 +99,15 @@
          </div>
         @endif
     </div>
+    </div>
 </x-app-layout>
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        let searchTerm = document.getElementById('term').value.trim();
+
+        if (searchTerm === '') {
+            event.preventDefault(); // フォームの送信を停止
+            alert('キーワードを入力してください'); // エラーメッセージを表示
+        }
+    });
+</script>
