@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/test', [PostController::class,'test']);
 
-Route::get('/timeline', [UserController::class,'timeline'])->middleware('auth'); 
+Route::get('/timeline', [UserController::class,'timeline'])->name('timeline')->middleware('auth'); 
 Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show')->middleware('auth');
 Route::delete('/posts/{post}',[PostController::class,'delete'])->middleware('auth');
 
@@ -57,7 +57,7 @@ Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 Route::get('/posts/{post}/edit',[PostController::class,'edit'])->middleware('auth');
 Route::put('/posts/{post}',[PostController::class,'update'])->middleware('auth');
 
-Route::get('/search', [SearchController::class,'search'])->middleware('auth'); 
+Route::get('/search', [SearchController::class,'search'])->name('search')->middleware('auth'); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name='header'>
-        Timeline
+        <span class="text-xl">Timeline</span>
     </x-slot>
     <div class='bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0 md:w-50'>
         <div class="sticky top-0 z-10">
