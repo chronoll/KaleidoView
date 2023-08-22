@@ -20,7 +20,9 @@
             <div class="flex justify-center items-center w-1/2 h-12 mb-4 bg-white border-4 border-double border-gray-500  font-bold text-center px-4 rounded-full mb-2">{{'@'.$user->name}}</div>
             <div class="flex justify-center items-center w-1/2 h-12 bg-white border-4 border-double border-gray-500  font-bold text-center px-4 rounded-full mb-2">{{$user->nickname}}</div>
         </div>
+        @if(!empty($user->self_introduction))
         <div class='w-full mt-4 bg-white border-4 border-double border-gray-500 rounded-lg p-2 text-center'>{{$user->self_introduction}}</div>
+        @endif
     </div>
     
     <div class='flex flex-col items-center w-full'>
