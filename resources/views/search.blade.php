@@ -35,7 +35,7 @@
     <div class='form-wrapper'>
     <form action='/search' method='GET' id='searchForm'>
         <div class='form-group'>
-            <input type='text' name='term' id="term" placeholder='キーワードを入力' class="border-0 outline-none mt-2 placeholder-gray-500 placeholder-opacity-50 w-full p-2">
+            <input type='text' name='term' id="term" placeholder='キーワードを入力' value="{{$term}}" class="border-0 outline-none mt-2 placeholder-gray-500 placeholder-opacity-50 w-full p-2">
         </div>
         <div class='form-group flex  justify-between mt-4'>
             <div class="items-start">
