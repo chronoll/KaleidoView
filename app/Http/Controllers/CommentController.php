@@ -25,10 +25,10 @@ class CommentController extends Controller
     {
 
         if(Auth::id()!=$comment->user_id){ //認証中UserのもつCommentでない場合
-            return redirect('/timeline');
+            return redirect('/');
         }
 
         $comment->delete();
-        return redirect('/');
+        return back();
     }
 }

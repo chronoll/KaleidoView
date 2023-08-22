@@ -42,7 +42,7 @@ class UserController extends Controller
         $user = User::findUserByName($name);
         
         if(Auth::id()!=$user->id){
-            return redirect('/timeline');
+            return redirect('/');
         }
 
         return view('profile.edit_profile',['user'=>$user]);
