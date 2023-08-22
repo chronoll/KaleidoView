@@ -49,7 +49,7 @@ class Category extends Model
     
     public static function searchByName($term)
     {
-        return static::where('name', 'like', '%' . $term . '%')->get();
+        return static::where('name', 'like', '%' . $term . '%')->with('posts')->get();
     }
     
     public function getPostsByCategory()

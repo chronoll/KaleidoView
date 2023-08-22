@@ -3,23 +3,19 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use App\Models\Category;
-use App\Models\Post;
-use Illuminate\Support\Collection;
-
-class CategoryBlock extends Component
+use App\Models\User;
+class UserBlock extends Component
 {
-    public $category;
-    public $posts;
+    
+    public $user;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Category $category,Collection $posts)
+    public function __construct(User $user)
     {
-        $this->category=$category;
-        $this->posts = $posts;
+        $this->user=$user;
     }
 
     /**
@@ -29,6 +25,6 @@ class CategoryBlock extends Component
      */
     public function render()
     {
-        return view('components.category-block');
+        return view('components.user-block');
     }
 }
