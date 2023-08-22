@@ -32,7 +32,8 @@ class SearchController extends Controller
 
         return view('search', [
             'results' => $results,
-            'type' => $searchType
+            'type' => $searchType,
+            'term'=>$searchTerm
         ]);
     }
 

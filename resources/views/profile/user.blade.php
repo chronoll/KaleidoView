@@ -25,7 +25,9 @@
     
     <div class='flex flex-col items-center w-full'>
         @foreach($categories as $category)
-        <x-category-block :category='$category' :posts='$posts' />
+        <div class="w-3/4">
+        <x-category-block :category='$category' :posts='$category->posts' />
+        </div>
         @endforeach
         
         @if (Auth::id() == $user->id)

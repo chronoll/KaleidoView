@@ -1,16 +1,16 @@
 
-<div class="w-3/4 h-80 bg-white shadow-lg rounded-lg ease-in transition duration-200 transform hover:scale-105 cursor-pointer flex flex-col justify-between relative my-4" data-href="{{route('categories.show',$category->id)}}"> <!-- relative added here -->
+<div class="w-full h-80 bg-white shadow-lg rounded-lg ease-in transition duration-200 transform hover:scale-105 cursor-pointer flex flex-col justify-between relative my-4" data-href="{{route('categories.show',$category->id)}}"> <!-- relative added here -->
     <div class="h-48 w-full bg-gray-200 flex flex-col justify-between rounded-lg p-4 bg-cover bg-center" style="background-image: url('{{$category->category_image}}')">
     </div>
 
     <div class="absolute right-0 bottom-0 z-10 flex">
-        @foreach($posts[$category->id]->sortByDesc('created_at')->take(3) as $post)
+        @foreach($posts->sortByDesc('created_at')->take(3) as $post)
             <a href='{{route('posts.show',$post->id)}}'>
                 <img src='{{$post->post_image}}' class="w-48 h-48 mx-2 my-4 rounded shadow"/>
             </a>
         @endforeach
-        @if($posts[$category->id]->count()>3)
-        <div class="self-end mx-2 my-6 text-gray-600 border-4 border-double border-gray-500 rounded-lg p-2 shadow">+{{$posts[$category->id]->count()-3}}</div>
+        @if($posts->count()>3)
+        <div class="self-end mx-2 my-6 text-gray-600 border-4 border-double border-gray-500 rounded-lg p-2 shadow">+{{$posts->count()-3}}</div>
         @endif
     </div>
 
