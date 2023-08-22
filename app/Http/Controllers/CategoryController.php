@@ -94,12 +94,11 @@ class CategoryController extends Controller
     
     public function delete(Category $category)
     {
-
         if(Auth::id()!=$category->user_id){ //認証中UserのもつCategoryでない場合
-            return redirect('/timeline');
+            return redirect('/');
         }
 
         $category->delete();
-        return redirect('/');
+        return redirect(route('users.show',Auth::user()->name));
     }
 }

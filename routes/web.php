@@ -19,13 +19,13 @@ use App\Http\Controllers\RelationshipController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+    //return view('welcome');
+//});
 
 Route::get('/test', [PostController::class,'test']);
 
-Route::get('/timeline', [UserController::class,'timeline'])->name('timeline')->middleware('auth'); 
+Route::get('/', [UserController::class,'timeline'])->name('timeline')->middleware('auth'); 
 Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show')->middleware('auth');
 Route::delete('/posts/{post}',[PostController::class,'delete'])->middleware('auth');
 

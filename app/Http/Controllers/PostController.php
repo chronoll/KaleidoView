@@ -44,7 +44,7 @@ class PostController extends Controller
     public function create(Category $category)
     {
         if(Auth::id()!=$category->user_id){ //認証中UserのもつCategoryでない場合
-            return redirect('/timeline');
+            return redirect('/');
         }
         
         return view('posts.create_post',['category'=>$category]);
@@ -83,7 +83,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         if(Auth::id()!=$post->user_id){ //認証中UserのもつPostでない場合
-            return redirect('/timeline');
+            return redirect('/');
         }
         
         return view('posts.edit_post',['post'=>$post,'category'=>$post->category]);
@@ -99,13 +99,14 @@ class PostController extends Controller
     
     public function delete(Post $post)
     {
+        $category_id=$post->category->id;
         
         if(Auth::id()!=$post->user_id){ //認証中UserのもつPostでない場合
-            return redirect('/timeline');
+            return redirect('/');
         }
         
         $post->delete();
-        return redirect('/');
+        return redirect(route('categories.show',$category_id));
     }
     
     public function test(Post $post)
