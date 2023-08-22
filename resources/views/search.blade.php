@@ -4,7 +4,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>
-        <span class="text-xl">Search</span>
+        <a class="text-xl" href="{{route('search')}}">Search</a>
         @if(isset($term))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
@@ -31,7 +31,7 @@
         @endif
         </div>
     </x-slot>
-    <div class="bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0 md:w-50">
+    <div class="bg-gray-100 w-64 h-screen p-4 flex flex-col flex-shrink-0 md:w-50">
     <div class='form-wrapper'>
     <form action='/search' method='GET' id='searchForm'>
         <div class='form-group'>
@@ -65,7 +65,13 @@
         @if(isset($term))
             <div class='container'>
                 @if($results->isEmpty())
-                    <p>No results found.</p>
+                    <div class="flex flex-col h-screen w-full justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-1/5 h-1/5 stroke-current text-gray-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                        </svg>
+                        <div class="text-xl font-bold text-gray-500 text-center">検索結果：なし</div>
+                    </div>
+
                 @else
                     @switch($type)
                         @case('post')
