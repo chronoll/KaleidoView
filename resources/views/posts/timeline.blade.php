@@ -7,7 +7,7 @@
         <span class="text-xl">Timeline</span>
         </div>
     </x-slot>
-    <div class='bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0 md:w-50'>
+    <div class='bg-gray-100 w-64 h-screen p-4 flex flex-col flex-shrink-0 md:w-50'>
         <div class="sticky top-0 z-10">
             <div class="text-2xl p-4 mb-4 flex justify-center items-center rounded-full">
                 Following
