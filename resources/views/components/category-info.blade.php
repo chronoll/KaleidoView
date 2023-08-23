@@ -1,6 +1,6 @@
-<div class="bg-gray-100 w-64 p-4 flex flex-col flex-shrink-0">
-    <div class='sticky top-0 z-10'>
-        <a href='{{route('categories.show',$category->id)}}' class="hover:bg-gray-300 text-2xl p-4 mb-4 border-4 border-double border-gray-500 flex justify-center items-center rounded-full">
+<div class="bg-repeat sticky top-0 z-10 h-screen w-64 p-4 flex flex-col flex-shrink-0" style="background-image:url('{{$category->category_image}}'); background-size: 50%;">
+    
+        <a href='{{route('categories.show',$category->id)}}' class="bg-white hover:bg-gray-300 text-2xl p-4 mb-4 shadow-lg flex justify-center items-center rounded">
             {{$category->name}}
         </a>
         <div class="flex justify-between mt-2 mx-2 items-center flex-col">
@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <div>
-                    <a href='{{route('users.show',$category->user->name)}}' class="flex-1 font-bold hover:underline text-center">
+                    <a href='{{route('users.show',$category->user->name)}}' class="flex-1 text-xl p-2 bg-white shadow-lg rounded-lg  font-bold hover:underline text-center">
                     {{'@'.$category->user->name}}
                     </a>
                 </div>
@@ -51,19 +51,19 @@
         
             </div>
         
-            <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
+            <div class="mb-4 bg-white shadow-lg  font-bold text-center py-2 px-4 rounded w-full mx-1 mb-2">
                 フォロワー数: {{$category->followerCount}}
             </div>
-            <div class='mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2'>
+            <div class='mb-4 bg-white shadow-lg font-bold text-center py-2 px-4 rounded w-full mx-1 mb-2'>
                 総いいね数: {{$category->totalLikes}}
             </div>
             @if(!empty($category->category_explanation))
-            <div class='mt-2 border-4 border-double border-gray-500 rounded-lg p-2 w-full text-center'>
+            <div class='mt-2 bg-white shadow-lg rounded-lg p-2 w-full text-center'>
                 {{$category->category_explanation}}
             </div>
             @endif
         </div>
-    </div>
+    
 </div>
 <script>
     function changeToUnfollow(btn) {
