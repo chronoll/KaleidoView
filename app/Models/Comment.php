@@ -36,6 +36,15 @@ class Comment extends Model
     //子コメントへの参照
     public function children()
     {
-        return $this->hasMany(self::class,'parent_comment_id');
+        return $this->hasMany(self::class,'parent_comment_id')->withTrashed();
+    }
+    
+    public static function getRootCommentForPost($postId)
+    {
+        return static::where('post_id',$postId)
+            ->withTrashed()
+            ->whereNull('parent_comment_id')
+            ->orderBy('created_at')
+            ->get();
     }
 }
