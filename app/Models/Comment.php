@@ -36,6 +36,6 @@ class Comment extends Model
     //子コメントへの参照
     public function children()
     {
-        return $this->hasMany(self::class,'parent_comment_id');
+        return $this->hasMany(self::class,'parent_comment_id')->withTrashed();
     }
 }

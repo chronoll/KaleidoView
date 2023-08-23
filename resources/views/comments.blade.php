@@ -1,3 +1,13 @@
+@if($comment->trashed())
+    <div class="w-2/3 h-24 bg-gray-300 shadow-lg rounded my-8 p-4 flex items-stretch" style="margin-left: {{ $margin ?? 0 }}px;">
+        <div class="flex w-1/2 h-full items-center">
+            <p>このコメントは削除されました。</p>
+        </div>
+        <div class="flex w-1/2 h-full items-end flex-row-reverse">
+            <small>{{ $comment->created_at->format('Y-m-d H:i') }}</small>
+        </div>
+    </div>
+@else
 <div class="w-2/3" style="margin-left: {{ $margin ?? 0 }}px;">
 <div id="comment-{{ $comment->id }}" class="w-full bg-white shadow-lg rounded my-4 p-4" >
     <div class='flex'>
@@ -26,6 +36,7 @@
     </form>
 </div>
 </div>
+@endif
 @foreach($comment->children as $childComment)
     @include('comments', ['comment' => $childComment, 'margin' => ($margin ?? 0) + 40])
 @endforeach

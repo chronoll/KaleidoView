@@ -35,7 +35,7 @@ class PostController extends Controller
     
     public function show(Post $post)
     {
-        $comments = $post->comments()->whereNull('parent_comment_id')->orderBy('created_at')->get();
+        $comments = $post->comments()->withTrashed()->whereNull('parent_comment_id')->orderBy('created_at')->get();
         $category=$post->category;
         return view('posts.show', compact('post', 'category','comments'));
         
