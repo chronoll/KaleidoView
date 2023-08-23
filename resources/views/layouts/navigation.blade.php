@@ -14,13 +14,13 @@
                 <div class="px-16 hidden flex-1 justify-between pr-16 space-x-8 sm:-my-px sm:ml-10 sm:flex">
         
                     <x-nav-link class="justify-center w-1/4" :href="route('timeline')" :active="request()->routeIs('timeline')">
-                        {{ __('Timeline') }}
+                        {{ __('タイムライン') }}
                     </x-nav-link>
                     <x-nav-link class="justify-center w-1/4" :href="route('search')" :active="request()->routeIs('search')">
-                        {{ __('Search') }}
+                        {{ __('検索') }}
                     </x-nav-link>
                     <x-nav-link class="justify-center w-1/4" :href="route('users.show', ['name' => Auth::user()->name])" :active="request()->routeIs('users.show')">
-                        {{ __('Profile') }}
+                        {{ __('プロフィール') }}
                     </x-nav-link>
 
                 </div>

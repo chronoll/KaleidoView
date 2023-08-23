@@ -69,12 +69,12 @@
         </div>
     <div class='flex flex-row-reverse'>
         @if (Auth::id() == $post->user_id)
-        <a href="/posts/{{ $post->id }}/edit" class ="bg-blue-500 text-white mt-2 px-4 py-2 rounded hover:bg-blue-600">Edit</a>
+        <a href="/posts/{{ $post->id }}/edit" class ="bg-blue-500 text-white mt-2 px-4 py-2 rounded hover:bg-blue-600">編集</a>
         @endif
     </div>
     
     <div class='comments'>
-    <div class="text-2xl text-gray-800">Comments ({{ $post->commentCount }})</div>
+    <div class="mt-8 text-2xl text-gray-800">コメント({{ $post->commentCount }})</div>
     @foreach ($comments as $comment)
         @include('comments', ['comment' => $comment, 'margin' => 0])
     @endforeach

@@ -21,7 +21,7 @@
     <div class="flex-1 bg-gray-200 p-4">
         @if(Auth::id()==$category->user_id)
     <a href='{{route('posts.create',$category->id)}}' class="bg-white hover:bg-gray-300 text-2xl p-4 mb-4  flex justify-center items-center rounded-full shadow-lg">
-        +New Post
+        +新規投稿
     </a>
     @endif
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">

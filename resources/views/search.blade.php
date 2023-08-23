@@ -4,7 +4,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>
-        <a class="text-xl" href="{{route('search')}}">Search</a>
+        <a class="text-xl" href="{{route('search')}}">検索</a>
         @if(isset($term))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
@@ -44,15 +44,15 @@
                 @endphp
                 <div>            
                 <input type="radio" id="post" name="type" value="post" {{$radioType==='post'?'checked':''}}>
-                <label for="post">Post</label>
+                <label for="post">投稿</label>
                 </div>
                 <div>  
                 <input type="radio" id="category" name="type" value="category" {{$radioType==='category'?'checked':''}}>
-                <label for="category">Category</label>
+                <label for="category">カテゴリ</label>
                 </div>
                 <div>  
                 <input type="radio" id="user" name="type" value="user" {{$radioType==='user'?'checked':''}}>
-                <label for="user">User</label>
+                <label for="user">ユーザー</label>
                 </div>
             </div>
             <div class='form-group flex items-end'>
