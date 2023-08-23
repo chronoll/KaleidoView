@@ -24,6 +24,7 @@ class Category extends Model
             foreach ($category->posts as $post) {
                 $post->delete();
             }
+            $category->relationships()->delete();
         });
     }
     

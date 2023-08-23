@@ -48,8 +48,22 @@ class ProfileController extends Controller
 
         $user = $request->user();
         
+        //各参照先のカラムを物理削除
+        $categories=$user->categories;
+        foreach($categories as $category){
+            foreach($category->posts as $post){
+                $post->likes()->forceDelete();
+                $post->comments()->forceDelete();
+            }
+            $category->posts()->forceDelete();
+            $category->relationships()->forceDelete();
+        }
+        $user->categories()->forceDelete();
+        $user->relationships()->forceDelete();
+        $user->likes()->forceDelete();
+        
         $user->comments()->delete();
-
+        
         Auth::logout();
 
         $user->delete();

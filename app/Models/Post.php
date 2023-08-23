@@ -48,6 +48,7 @@ class Post extends Model
     {
         static::deleted(function ($post){
             $post->comments()->delete();
+            $post->likes()->delete();
         });
     }
     
