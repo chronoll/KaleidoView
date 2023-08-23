@@ -17,7 +17,7 @@
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
         </svg>
-        <span class="text-xl">Edit</span>
+        <span class="text-xl">編集</span>
         </div>
     </x-slot>
     <x-category-info :category='$category' />
@@ -28,13 +28,13 @@
             <div class='image'>
                 <div class="flex justify-between items-center">
                     <input id='file-input' type='file' name='image' accept='image/*'>
-                    <button type='button' id='reset-file' class="px-4 py-2 bg-red-400 text-white rounded mr-4">Reset File</button>
+                    <button type='button' id='reset-file' class="px-4 py-2 bg-red-400 text-white rounded mr-4">画像をリセット</button>
                 </div>
                 <div class="relative bg-white m-4 mx-auto flex justify-center items-center" style="width: 400px; height: 400px;">
                     <span class="text-center absolute z-0">画像を選択してください</span>
                     <div id="crop-image-area" class="absolute top-0 left-0 w-full h-full flex justifys-center items-center bg-gray-300 z-10" style="display:none;">
                         <div id="croppie" class="w-full max-w-screen-sm"></div>
-                        <button type="button" id="crop-button" class="absolute mt-3 px-4 py-2 bg-blue-600 text-white rounded" style="right: -150px;">Crop Image</button>
+                        <button type="button" id="crop-button" class="absolute mt-3 px-4 py-2 bg-blue-600 text-white rounded" style="right: -150px;">トリミング</button>
                     </div>
                     <div class="preview-cropped-image flex justify-center items-center h-full z-10"></div>
                 </div>

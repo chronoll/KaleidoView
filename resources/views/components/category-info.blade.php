@@ -21,7 +21,7 @@
                 @if (Auth::id() == $category->user->id)
                 <a href='{{route('categories.edit',$category->id)}}'>
                     <div class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 rounded-full md:w-full mt-4  mb-3">
-                        Edit
+                        カテゴリを編集
                     </div>
                 </a>
                 @else
@@ -35,7 +35,7 @@
                             onmouseover="changeToUnfollow(this)" 
                             onmouseout="changeToFollowing(this)"
                         >
-                            Following
+                            フォロー中
                         </button>
                     </form>
                     @else
@@ -43,7 +43,7 @@
                     <form method='POST' action='{{route('follow', $category)}}'>
                         @csrf
                         <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold text-center py-2 px-4 md:rounded-full w-full mt-4  mb-3">
-                            Follow
+                            フォロー
                         </button>
                     </form>
                     @endif
@@ -52,10 +52,10 @@
             </div>
         
             <div class="mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2">
-                Followers: {{$category->followerCount}}
+                フォロワー数: {{$category->followerCount}}
             </div>
             <div class='mb-4 border-4 border-double border-gray-500  font-bold text-center py-2 px-4 rounded-full w-full mx-1 mb-2'>
-                Total likes: {{$category->totalLikes}}
+                総いいね数: {{$category->totalLikes}}
             </div>
             @if(!empty($category->category_explanation))
             <div class='mt-2 border-4 border-double border-gray-500 rounded-lg p-2 w-full text-center'>
@@ -67,10 +67,10 @@
 </div>
 <script>
     function changeToUnfollow(btn) {
-        btn.innerText = 'Unfollow';
+        btn.innerText = 'フォロー解除';
     }
 
     function changeToFollowing(btn) {
-        btn.innerText = 'Following';
+        btn.innerText = 'フォロー中';
     }
 </script>
