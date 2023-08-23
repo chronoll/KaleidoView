@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Http\Requests\PostRequest;
 use Auth;
 use App\Http\Controllers\Controller;
@@ -35,7 +36,7 @@ class PostController extends Controller
     
     public function show(Post $post)
     {
-        $comments = $post->comments()->withTrashed()->whereNull('parent_comment_id')->orderBy('created_at')->get();
+        $comments = Comment::getRootCommentForPost($post->id);
         $category=$post->category;
         return view('posts.show', compact('post', 'category','comments'));
         
