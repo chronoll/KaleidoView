@@ -1,7 +1,11 @@
 @if($comment->trashed())
     <div class="w-2/3 h-24 bg-gray-300 shadow-lg rounded my-8 p-4 flex items-stretch" style="margin-left: {{ $margin ?? 0 }}px;">
         <div class="flex w-1/2 h-full items-center">
+            @if(is_null($comment->user_id))
+            <p>ユーザーが退会しました。</p>
+            @else
             <p>このコメントは削除されました。</p>
+            @endif
         </div>
         <div class="flex w-1/2 h-full items-end flex-row-reverse">
             <small>{{ $comment->created_at->format('Y-m-d H:i') }}</small>
