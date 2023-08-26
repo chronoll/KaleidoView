@@ -97,9 +97,9 @@
             });
             croppieInstance.bind({
                 url: event.target.result
-            }).then(function() {
-                cropImageArea.style.display = 'block';
             });
+                cropImageArea.style.display = 'block';
+        
         };
         reader.readAsDataURL(file);
     }
