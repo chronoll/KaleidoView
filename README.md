@@ -1,8 +1,4 @@
-<div style="background-color: #ffffff; text-align: center;">
-    <a href="https://laravel.com" target="_blank">
-        <img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1692501359/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89_fj8di5.svg" width="400" alt="KaleidoView Logo">
-    </a>
-</div>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1692501359/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89_fj8di5.svg" width="400" alt="KaleidoView Logo"></a></p>
 
 
 # name
