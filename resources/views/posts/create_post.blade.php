@@ -68,35 +68,33 @@
 
     // トリミング後の画像プレビューをクリア
     document.querySelector('.preview-cropped-image').innerHTML = "";
-
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            if (croppieInstance) {
-                croppieInstance.destroy();
-            }
-            croppieInstance = new Croppie(croppieElement, {
-                viewport: {
-                    width: 300,
-                    height: 300,
-                    type: 'square'
-                },
-                boundary: {
-                    width: 400,
-                    height: 400
-                },
-                enforceBoundary: true
-            });
-            croppieInstance.bind({
-                url: event.target.result
-            }).then(function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                if (croppieInstance) {
+                    croppieInstance.destroy();
+                }
+                croppieInstance = new Croppie(croppieElement, {
+                    viewport: {
+                        width: 300,
+                        height: 300,
+                        type: 'square'
+                    },
+                    boundary: {
+                        width: 400,
+                        height: 400
+                    },
+                    enforceBoundary: true
+                });
+                croppieInstance.bind({
+                    url: event.target.result
+                });
                 cropImageArea.style.display = 'block';
-            });
-        };
-        reader.readAsDataURL(file);
-    }
-});
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 
 
 
