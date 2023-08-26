@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1692501359/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89_fj8di5.svg" width="400" alt="KaleidoView Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693090674/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-17_004303_e4k80n.png" width="400" alt="KaleidoView Logo"></a></p>
 
 
 # name
