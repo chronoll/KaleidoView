@@ -54,8 +54,17 @@ class UserController extends Controller
         
         $input=$request['user'];
         
-        if($request->file('image')){
-            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        if($request->input('cropped_image')!=$user->user_image){
+            // cropped_imageからBase64データを取得
+            $base64_image = $request->input('cropped_image');
+
+            // 不要な部分を削除してBase64データだけを取得
+            list($type, $base64_image) = explode(';', $base64_image);
+            list(, $base64_image) = explode(',', $base64_image);
+
+            // Base64データをCloudinaryにアップロード
+            $uploaded_image = Cloudinary::upload("data:" . $type . ";base64," . $base64_image);
+            $image_url = $uploaded_image->getSecurePath();
             $input+=['user_image'=>$image_url];
         }
         
