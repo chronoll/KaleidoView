@@ -32,7 +32,7 @@
                 </div>
                 <div class="relative bg-white m-4 mx-auto flex justify-center items-center" style="width: 400px; height: 400px;">
                     <span class="text-center absolute z-0">画像を選択してください</span>
-                    <div id="crop-image-area" class="absolute top-0 left-0 w-full h-full flex justifys-center items-center bg-gray-300 z-10" style="display:none;">
+                    <div id="crop-image-area" class="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-gray-300 z-10" style="display:none;">
                         <div id="croppie" class="w-full max-w-screen-sm"></div>
                         <button type="button" id="crop-button" class="absolute mt-3 px-4 py-2 bg-blue-600 text-white rounded" style="right: -150px;">トリミング</button>
                     </div>
