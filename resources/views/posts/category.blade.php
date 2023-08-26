@@ -18,7 +18,7 @@
     
     
     
-    <div class="flex-1 bg-gray-200 p-4">
+    <div class="flex-1 bg-repeat p-4" style="background-image:url('{{$category->category_image}}'); background-size: 128px auto;">
         @if(Auth::id()==$category->user_id)
     <a href='{{route('posts.create',$category->id)}}' class="bg-white hover:bg-gray-300 text-2xl p-4 mb-4  flex justify-center items-center rounded-full shadow-lg">
         +新規投稿
