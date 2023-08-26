@@ -11,28 +11,6 @@
         <span class="text-xl">編集</span>
         </div>
     </x-slot>
-    <!--
-    <form action='/users/{{$user->name}}' method='POST' enctype='multipart/form-data'>
-        @csrf
-        @method('PUT')
-        <div class='image'>
-            <input id='file-input' type='file' name='image'>
-            <button type='button' id='reset-file'>Reset File</button>
-        </div>
-        <div class='nickname'>
-            <h2>Nickname</h2>
-            <input type='text' name='user[nickname]' placeholder='ニックネーム' value='{{$user->nickname}}'/>
-        </div>
-        <div class='self_introduction'>
-            <h2>Self Introduction</h2>
-            <textarea name="user[self_introduction]" placeholder='自己紹介'>{{$user->self_introduction}}</textarea>
-        </div>
-        <input type='submit' value='保存'/>
-    </form>
-    <div class='footer'>
-        <a href='../'>戻る</a>
-    </div>
-    -->
     <div class="flex-1 bg-gray-200 p-4">
         <form action='/users/{{$user->name}}' method='POST' enctype='multipart/form-data'>
         @csrf
