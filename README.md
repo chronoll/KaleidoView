@@ -16,7 +16,12 @@ You can create posts on pages by category and build as many hobby worlds as you 
 The target to follow is the person's category, not the user. Therefore, you can watch only the aspects of the person you want to know.
 
 ## Requirement
-
+-PHP 8.0.29 
+-Laravel Framework 9.52.10
+-Laravel/Breeze v1.19.2
+-tailwindcss├── @tailwindcss/aspect-ratio@0.4.2
+            ├── @tailwindcss/forms@0.5.3
+            ├── tailwindcss@3.3.2
 ## Usage
 
 ## Features
