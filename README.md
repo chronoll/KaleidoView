@@ -1,66 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693090674/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-17_004303_e4k80n.png" width="400" alt="KaleidoView Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## name
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+KaleidoView ~ Create your own world! ~
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+カテゴリ特化型の画像投稿SNSです。  
+カテゴリ別のページに投稿を作成し、あなただけの趣味の世界をいくつも構築できます。   
+フォローするのはユーザーではなくその人のカテゴリです。そのため、その人の知りたい側面だけをウォッチングすることができます。
 
-## Learning Laravel
+It is a category-specific image posting SNS. 
+You can create posts on pages by category and build as many hobby worlds as you like.
+The target to follow is the person's category, not the user. Therefore, you can watch only the aspects of the person you want to know.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Purpose
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+TwitterなどのSNSを利用していると、例えば  
+😕「この人とは○○の趣味が合うからフォローしているけど、△△に関する投稿は興味ないなあ」  
+😮‍💨「フォロワーのために○○の投稿と△△の投稿を分けたいけど、いちいちアカウントを作るのは面倒だなあ」  
+  と感じた経験があるのではないでしょうか。私はよくあります。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+そこで私は、ユーザーの投稿をカテゴリで分離し、フォローの単位をユーザーではなくカテゴリにしてしまおうと考えました。  
+この仕組みをとることで、以下のメリットがあります。  
 
-## Laravel Sponsors
+☑️自分の好きなジャンルの投稿だけをフォローできる  
+☑️投稿をカテゴリ分けすることで、フォロワーに遠慮せず好きなだけ投稿できる  
+☑️カテゴリ別の投稿画像によって、ページに統一感を持たせられる  
+☑️フォロワーに遠慮することなく、好きなだけ投稿ができる
+  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## Requirement
+-PHP 8.0.29  
+-Laravel Framework 9.52.10  
+-Laravel/Breeze v1.19.2  
+-tailwindcss 3.3.2
+## Usage
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![無題の動画-‐-Clipchampで作成-_4_](https://github.com/chronoll/KaleidoView/assets/127325184/1035a145-6f13-409e-ba0f-beeba06175cd)
 
-## Contributing
+ユーザーは独自のカテゴリを作成でき、その中に投稿を作成します。 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![無題の動画-‐-Clipchampで作成-_5_](https://github.com/chronoll/KaleidoView/assets/127325184/cce98836-aabd-4534-8337-5ebfda0774fb)
 
-## Code of Conduct
+投稿、カテゴリ、ユーザーを検索することもできます。
+他のユーザーのカテゴリが気に入ったら、フォローしましょう。 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![無題の動画-‐-Clipchampで作成-_7_](https://github.com/chronoll/KaleidoView/assets/127325184/1b8f5915-8595-41e6-a196-a27f9ac9460f)
 
-## Security Vulnerabilities
+フォローしたカテゴリ一覧と投稿は、タイムラインで確認できます。 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Features
+<table>
+<tr>
+<td><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693140302/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-27_214443_afxmui.png" height="450"></td>
+<td><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693140067/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-27_214048_msblum.png" height="450"></td>
+<td><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693140974/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-27_215539_sc8tp5.png" height="450"></td>
+</tr>
+</table>
 
-## License
+各カテゴリの背景画像を自由に設定できるため、より自分の世界観とマッチしたページを作ることができます。
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Reference
+
+上記画像でお借りしたフリー素材   
+[shigureni](https://www.shigureni.com/)   
+[Bg-Patterns](https://bg-patterns.com/)  
+
+## Author
+
+
+## Licence
+
+
