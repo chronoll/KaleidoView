@@ -1,7 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693090674/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-08-17_004303_e4k80n.png" width="400" alt="KaleidoView Logo"></a></p>
 
 
-# name
+## name
 
 KaleidoView ~ Create your own world! ~
 
@@ -14,6 +14,20 @@ KaleidoView ~ Create your own world! ~
 It is a category-specific image posting SNS. 
 You can create posts on pages by category and build as many hobby worlds as you like.
 The target to follow is the person's category, not the user. Therefore, you can watch only the aspects of the person you want to know.
+
+##Purpose
+
+TwitterなどのSNSを利用していると、例えば  
+😕:「この人とは○○の趣味が合うからフォローしているけど、△△に関する投稿は興味ないなあ」  
+😮‍💨:「フォロワーのために○○の投稿と△△の投稿を分けたいけど、いちいちアカウントを作るのは面倒だなあ」  
+と感じた経験があるのではないでしょうか。私はよくあります。
+
+そこで私は、ユーザーの投稿をカテゴリで分離し、フォローの単位をユーザーではなくカテゴリにしてしまおうと考えました。  
+この仕組みをとることで、以下のメリットがあります。  
+
+☑️:自分の好きなジャンルの投稿だけをフォローできる  
+☑️:投稿をカテゴリ分けすることで、フォロワーに遠慮せず好きなだけ投稿できる  
+☑️:一つのアカウントで、様々な趣味を持つ自分を表現できる
 
 ## Requirement
 -PHP 8.0.29  
