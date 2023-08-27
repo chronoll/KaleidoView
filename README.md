@@ -7,8 +7,8 @@ KaleidoView
 
 ## Overview
 
-カテゴリ特化型の画像投稿SNSです。
-カテゴリ別のページに投稿を作成し、あなただけの趣味の世界をいくつも構築できます。
+カテゴリ特化型の画像投稿SNSです。  
+カテゴリ別のページに投稿を作成し、あなただけの趣味の世界をいくつも構築できます。   
 フォローするのはユーザーではなくその人のカテゴリです。そのため、その人の知りたい側面だけをウォッチングすることができます。
 
 It is a category-specific image posting SNS. 
@@ -48,9 +48,9 @@ The target to follow is the person's category, not the user. Therefore, you can 
 
 ## Reference
 
-上記画像でお借りしたフリー素材 
-[shigureni](https://www.shigureni.com/) 
-[Bg-Patterns](https://bg-patterns.com/) 
+上記画像でお借りしたフリー素材   
+[shigureni](https://www.shigureni.com/)   
+[Bg-Patterns](https://bg-patterns.com/)  
 
 ## Author
 
