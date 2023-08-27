@@ -23,7 +23,8 @@ The target to follow is the person's category, not the user. Therefore, you can 
             ├── @tailwindcss/forms@0.5.3
             ├── tailwindcss@3.3.2
 ## Usage
-<p align="center"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693130146/github/%E7%84%A1%E9%A1%8C%E3%81%AE%E5%8B%95%E7%94%BB-_-Clipchamp%E3%81%A7%E4%BD%9C%E6%88%90-_4__sixqye.gif" width="400" alt="KaleidoView Logo"></p>
+<p align="center"><img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1693130146/github/%E7%84%A1%E9%A1%8C%E3%81%AE%E5%8B%95%E7%94%BB-_-Clipchamp%E3%81%A7%E4%BD%9C%E6%88%90-_4__sixqye.gif" width="400"></p>
+
 ## Features
 
 ## Reference
