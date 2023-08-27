@@ -3,7 +3,7 @@
 
 # name
 
-KaleidoView
+KaleidoView ~Create your own world!~
 
 ## Overview
 
