@@ -15,12 +15,12 @@ It is a category-specific image posting SNS.
 You can create posts on pages by category and build as many hobby worlds as you like.
 The target to follow is the person's category, not the user. Therefore, you can watch only the aspects of the person you want to know.
 
-##Purpose
+## Purpose
 
 TwitterなどのSNSを利用していると、例えば  
-😕:「この人とは○○の趣味が合うからフォローしているけど、△△に関する投稿は興味ないなあ」  
+  😕:「この人とは○○の趣味が合うからフォローしているけど、△△に関する投稿は興味ないなあ」  
 😮‍💨:「フォロワーのために○○の投稿と△△の投稿を分けたいけど、いちいちアカウントを作るのは面倒だなあ」  
-と感じた経験があるのではないでしょうか。私はよくあります。
+  と感じた経験があるのではないでしょうか。私はよくあります。
 
 そこで私は、ユーザーの投稿をカテゴリで分離し、フォローの単位をユーザーではなくカテゴリにしてしまおうと考えました。  
 この仕組みをとることで、以下のメリットがあります。  
