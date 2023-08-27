@@ -24,7 +24,9 @@ The target to follow is the person's category, not the user. Therefore, you can 
             ├── tailwindcss@3.3.2  
 ## Usage
 
-"![無題の動画-‐-Clipchampで作成-_4_](https://github.com/chronoll/KaleidoView/assets/127325184/1035a145-6f13-409e-ba0f-beeba06175cd)
+![無題の動画-‐-Clipchampで作成-_4_](https://github.com/chronoll/KaleidoView/assets/127325184/1035a145-6f13-409e-ba0f-beeba06175cd)
+ユーザーは独自のカテゴリを作成でき、その中に投稿を作成します。
+
 
 
 ## Features
