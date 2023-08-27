@@ -26,16 +26,16 @@ The target to follow is the person's category, not the user. Therefore, you can 
 
 ![無題の動画-‐-Clipchampで作成-_4_](https://github.com/chronoll/KaleidoView/assets/127325184/1035a145-6f13-409e-ba0f-beeba06175cd)
 
-ユーザーは独自のカテゴリを作成でき、その中に投稿を作成します。
+ユーザーは独自のカテゴリを作成でき、その中に投稿を作成します。 
 
 ![無題の動画-‐-Clipchampで作成-_5_](https://github.com/chronoll/KaleidoView/assets/127325184/cce98836-aabd-4534-8337-5ebfda0774fb)
 
 投稿、カテゴリ、ユーザーを検索することもできます。
-他のユーザーのカテゴリが気に入ったら、フォローしましょう。
+他のユーザーのカテゴリが気に入ったら、フォローしましょう。 
 
-![無題の動画-‐-Clipchampで作成-_6_](https://github.com/chronoll/KaleidoView/assets/127325184/be713de7-9790-4e41-95f7-904d92d92318)
+![無題の動画-‐-Clipchampで作成-_7_](https://github.com/chronoll/KaleidoView/assets/127325184/1b8f5915-8595-41e6-a196-a27f9ac9460f)
 
-フォローしたカテゴリ一覧と投稿は、タイムラインで確認できます。
+フォローしたカテゴリ一覧と投稿は、タイムラインで確認できます。 
 
 ## Features
 
