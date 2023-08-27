@@ -19,9 +19,7 @@ The target to follow is the person's category, not the user. Therefore, you can 
 -PHP 8.0.29  
 -Laravel Framework 9.52.10  
 -Laravel/Breeze v1.19.2  
--tailwindcss├── @tailwindcss/aspect-ratio@0.4.2  
-            ├── @tailwindcss/forms@0.5.3  
-            ├── tailwindcss@3.3.2  
+-tailwindcss 3.3.2
 ## Usage
 
 ![無題の動画-‐-Clipchampで作成-_4_](https://github.com/chronoll/KaleidoView/assets/127325184/1035a145-6f13-409e-ba0f-beeba06175cd)
@@ -50,9 +48,9 @@ The target to follow is the person's category, not the user. Therefore, you can 
 
 ## Reference
 
-上記画像でお借りしたフリー素材
-[shigureni](https://www.shigureni.com/)
-[Bg-Patterns](https://bg-patterns.com/)
+上記画像でお借りしたフリー素材 
+[shigureni](https://www.shigureni.com/) 
+[Bg-Patterns](https://bg-patterns.com/) 
 
 ## Author
 
