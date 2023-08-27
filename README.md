@@ -33,7 +33,9 @@ The target to follow is the person's category, not the user. Therefore, you can 
 投稿、カテゴリ、ユーザーを検索することもできます。
 他のユーザーのカテゴリが気に入ったら、フォローしましょう。
 
+![無題の動画-‐-Clipchampで作成-_6_](https://github.com/chronoll/KaleidoView/assets/127325184/be713de7-9790-4e41-95f7-904d92d92318)
 
+フォローしたカテゴリ一覧と投稿は、タイムラインで確認できます。
 
 ## Features
 
