@@ -46,7 +46,13 @@ The target to follow is the person's category, not the user. Therefore, you can 
 </tr>
 </table>
 
+各カテゴリの背景画像を自由に設定できるため、より自分の世界観とマッチしたページを作ることができます。
+
 ## Reference
+
+上記画像でお借りしたフリー素材
+[shigureni](https://www.shigureni.com/)
+[Bg-Patterns](https://bg-patterns.com/)
 
 ## Author
 
