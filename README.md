@@ -65,7 +65,7 @@ TwitterなどのSNSを利用していると、例えば
 
 ## Reference
 
-上記画像でお借りしたフリー素材   
+<!--上記画像でお借りしたフリー素材   
 [shigureni](https://www.shigureni.com/)   
 [Bg-Patterns](https://bg-patterns.com/)  
 
@@ -75,3 +75,4 @@ TwitterなどのSNSを利用していると、例えば
 ## Licence
 
 
+-->
