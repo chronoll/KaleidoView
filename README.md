@@ -58,12 +58,9 @@ TwitterなどのSNSを利用していると、例えば
 </table>
 
 各カテゴリの背景画像を自由に設定できるため、より自分の世界観とマッチしたページを作ることができます。
-
+(使用したフリー素材 [shigureni](https://www.shigureni.com/) [Bg-Patterns](https://bg-patterns.com/) )
 ## Reference
 
-上記画像でお借りしたフリー素材   
-[shigureni](https://www.shigureni.com/)   
-[Bg-Patterns](https://bg-patterns.com/)  
 
 ## Author
 
