@@ -1,4 +1,5 @@
 <x-app-layout>
+    @section('title',$post->title." in ".$category->name)
     <x-slot name='header'>
         <div class="flex items-center space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-current text-gray-600">
