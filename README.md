@@ -67,4 +67,3 @@ TwitterなどのSNSを利用していると、例えば
 
 ## Licence
 
-
