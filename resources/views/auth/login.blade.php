@@ -45,4 +45,10 @@
             </x-primary-button>
         </div>
     </form>
+    @section('footer')
+    <div class=" w-full sm:max-w-md p-4 m-4">
+        <small class="text-gray-700">アカウントをお持ちですか？</small>
+        <a href="{{route('register')}}" class="text-gray-700 text-sm">登録</a>
+    </div>
+    @endsection
 </x-guest-layout>
