@@ -15,7 +15,7 @@
         <a class="text-xl" href={{route('categories.show',$category->id)}}>{{$category->name}}</a>
         </div>
     </x-slot>
-    <x-category-info :category='$category' />
+    <x-category-info :category='$category'/>
     
     
     

@@ -63,6 +63,16 @@
             </div>
             @endif
         </div>
+        
+        <div>
+        
+            <span class="uppercase text-xs bg-green-50 p-0.5 border-gray-500 border rounded text-gray-700 font-medium">{{$category->tags[0]->name}}</span>
+            <br />
+            <span class="uppercase text-xs bg-green-50 p-0.5 border-blue-500 border rounded text-blue-700 font-medium">{{$category->tags[1]->name}}</span>
+            <br />
+            <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium">{{$category->tags[2]->name}}</span>
+        
+        </div>
     
 </div>
 <script>

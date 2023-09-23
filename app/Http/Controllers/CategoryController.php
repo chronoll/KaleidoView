@@ -17,6 +17,8 @@ class CategoryController extends Controller
     {
         $posts=$category->getPostsByCategory();
         
+        $category->load('tags');
+        
         return view('posts.category',compact('category','posts'));
     }
     
