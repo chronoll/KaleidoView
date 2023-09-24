@@ -94,6 +94,15 @@ class CategoryController extends Controller
         }
         $input+=['user_id'=>Auth::user()->id];
         $category->fill($input)->save();
+        
+        $tagData=$request->input('tag');
+        foreach($tagData as $index=>$data){
+            if(isset($category->tags[$index])){
+                $category->tags[$index]->update($data);
+            }
+        }
+        
+        
         return redirect('/categories/' . $category->id);
     }
     

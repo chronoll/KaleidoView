@@ -45,6 +45,12 @@
                 <label for="title" class="ml-2 text-sm block">カテゴリ名</label>
                 <input id="title" type="text" name="category[name]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" value ="{{$category->name}}" placeholder="カテゴリ名を入力">
             </div>
+            <label for="tag_name_0" class="ml-2 text-sm block">タグ名 (0)</label>
+            <input id="tag_name_0" type="text" name="tag[0][name]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" value="{{ $category->tags[0]->name }}" placeholder="タグ名を入力">
+            <label for="tag_name_1" class="ml-2 text-sm block">タグ名 (1)</label>
+            <input id="tag_name_1" type="text" name="tag[1][name]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" value="{{ $category->tags[1]->name }}" placeholder="タグ名を入力">
+            <label for="tag_name_2" class="ml-2 text-sm block">タグ名 (2)</label>
+            <input id="tag_name_2" type="text" name="tag[2][name]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" value="{{ $category->tags[2]->name }}" placeholder="タグ名を入力">
             <div class="mb-8">
                 <label for="body" class="ml-2 text-sm block">カテゴリ説明</label>
                 <textarea id="body" name="category[category_explanation]"  class="h-40 border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" placeholder="カテゴリ説明を入力">{{$category->category_explanation}}</textarea>
