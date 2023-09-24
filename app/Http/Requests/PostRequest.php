@@ -18,6 +18,7 @@ class PostRequest extends FormRequest
             'post.title' => 'required|string|max:50',
             'post.body' => 'required|string|max:2000',
             //'cropped_image' => 'required',
+            'post.tag_id'=>'nullable|integer|exists:tags,id',
         ];
             
         if ($this->isMethod('put')) {

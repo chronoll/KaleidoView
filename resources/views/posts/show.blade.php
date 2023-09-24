@@ -37,6 +37,7 @@
                     @if($post->tag->position==3)
                     <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium">{{$post->tag->name}}</span>
                     @endif
+
                     @if (Auth::user()->hasLiked($post))
                     <!-- いいねを外すボタン -->
                     <form method="POST" action="{{ route('unlike', $post) }}">
@@ -108,6 +109,7 @@
     </div>
     </div>
 </x-app-layout>
+
 <script>
 function deleteComment(id){
     'use strict'
@@ -116,4 +118,22 @@ function deleteComment(id){
         
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    let tagElements = document.querySelectorAll('.tag');
+    let tagIdField = document.getElementById('tagId');
+
+    tagElements.forEach(tagElement => {
+        tagElement.addEventListener('click', function() {
+            let position = parseInt(tagElement.getAttribute('data-position'));
+            let nextPosition = (position % 3) + 1; 
+
+            // すべてのタグを非表示にする
+            tagElements.forEach(el => el.style.display = 'none');
+            
+            // 次のタグだけを表示する
+            document.querySelector(`[data-position="${nextPosition}"]`).style.display = 'inline';
+            tagIdField.value = tagId;
+        });
+    });
+});
 </script>
