@@ -22,4 +22,9 @@ class Tag extends Model
     {
         return $this->hasMany(Post::class);
     }
+    
+    public function getPostCountAttribute()
+    {
+        return $this->posts()->count();
+    }
 }
