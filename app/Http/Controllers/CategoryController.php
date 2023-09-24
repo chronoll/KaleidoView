@@ -63,6 +63,18 @@ class CategoryController extends Controller
         }
         $input+=['user_id'=>Auth::user()->id];
         $category->fill($input)->save();
+        
+        //Tagインデックスを作成
+        $tagData=$request->input('tag');
+        foreach($tagData as $index=>$data){
+            $tag=new Tag;
+            $tag->name=$data['name'];
+            $tag->category_id=$category->id;
+            $tag->position=$index+1;
+            $tag->save();
+        }
+        
+        
         return redirect('/categories/' . $category->id);
     }
     
