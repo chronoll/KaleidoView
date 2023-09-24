@@ -40,6 +40,12 @@
                 <input type="hidden" name="cropped_image" id="cropped_image">
             </div>
             <div class="mt-12 mb-8">
+                <input type="hidden" name="post[tag_id]" id="tagId">
+                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-gray-500 border rounded text-gray-700 font-medium" data-position="1" data-tag-id="{{ $category->tags[0]->id }}">{{$category->tags[0]->name}}</span>
+                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-blue-500 border rounded text-blue-700 font-medium" data-position="2" data-tag-id="{{ $category->tags[1]->id }}" style="display: none;">{{$category->tags[1]->name}}</span>
+                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium" data-position="3" data-tag-id="{{ $category->tags[2]->id }}" style="display: none;">{{$category->tags[2]->name}}</span>
+            </div>
+            <div class="mt-12 mb-8">
                 <label for="title" class="ml-2 text-sm block">タイトル</label>
                 <input id="title" type="text" name="post[title]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" placeholder="タイトルを入力">
             </div>
@@ -118,4 +124,25 @@
     document.querySelector('.preview-cropped-image').innerHTML = "";
     croppedImageInput.value = "";
 });
+    document.addEventListener('DOMContentLoaded', function() {
+        let tagElements = document.querySelectorAll('.tag');
+        let tagIdField = document.getElementById('tagId');
+
+        tagElements.forEach(tagElement => {
+            tagElement.addEventListener('click', function() {
+                let position = parseInt(tagElement.getAttribute('data-position'));
+                let nextPosition = (position % 3) + 1; 
+
+                // すべてのタグを非表示にする
+                tagElements.forEach(el => el.style.display = 'none');
+            
+                // 次のタグだけを表示する
+                let nextTagElement = document.querySelector(`[data-position="${nextPosition}"]`);
+                nextTagElement.style.display = 'inline';
+            
+                // クリックしたタグのdata-tag-idを隠しフィールドにセット
+                tagIdField.value = nextTagElement.getAttribute('data-tag-id');
+            });
+        });
+    });
 </script>
