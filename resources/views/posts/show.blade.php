@@ -118,22 +118,4 @@ function deleteComment(id){
         
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    let tagElements = document.querySelectorAll('.tag');
-    let tagIdField = document.getElementById('tagId');
-
-    tagElements.forEach(tagElement => {
-        tagElement.addEventListener('click', function() {
-            let position = parseInt(tagElement.getAttribute('data-position'));
-            let nextPosition = (position % 3) + 1; 
-
-            // すべてのタグを非表示にする
-            tagElements.forEach(el => el.style.display = 'none');
-            
-            // 次のタグだけを表示する
-            document.querySelector(`[data-position="${nextPosition}"]`).style.display = 'inline';
-            tagIdField.value = tagId;
-        });
-    });
-});
 </script>
