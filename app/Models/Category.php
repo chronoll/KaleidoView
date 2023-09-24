@@ -63,6 +63,11 @@ class Category extends Model
         return $this->posts()->get()->sortByDesc('created_at');
     }
     
+    public function selectPostsByTag(Tag $tag)
+    {
+        return $this->posts()->where('tag_id',$tag->id)->get()->sortByDesc('created_at');
+    }
+    
     public function getTagsByCategory(){
         return $this->tags()->get()->sortByDesc('position');
     }

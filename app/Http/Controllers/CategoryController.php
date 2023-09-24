@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 use App\Http\Requests\CategoryRequest;
 use Auth;
 use App\Http\Controllers\Controller;
@@ -13,11 +14,13 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class CategoryController extends Controller
 {
-    public function index(Category $category)
+    public function index(Category $category,Tag $tag=null)
     {
-        $posts=$category->getPostsByCategory();
-        
-        $category->load('tags');
+        if($tag){
+            $posts=$category->selectPostsByTag($tag);
+        }else{
+            $posts=$category->getPostsByCategory();
+        }
         
         return view('posts.category',compact('category','posts'));
     }

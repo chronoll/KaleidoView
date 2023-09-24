@@ -50,7 +50,8 @@ Route::get('/categories/{category}/edit',[CategoryController::class,'edit'])->na
 Route::put('/categories/{category}',[CategoryController::class,'update'])->middleware('auth');
 Route::delete('/categories/{category}',[CategoryController::class,'delete'])->middleware('auth');
 
-Route::get('/categories/{category}',[CategoryController::class,'index'])->name('categories.show')->middleware('auth');
+Route::get('/categories/{category}/{tag?}',[CategoryController::class,'index'])->name('categories.show')->middleware('auth');
+
 Route::get('/categories/{category}/create',[PostController::class,'create'])->name('posts.create')->middleware('auth');
 Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
