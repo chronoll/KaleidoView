@@ -37,7 +37,7 @@
                 <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
             </div>
             <div class="mt-12 mb-8">
-                <input type="hidden" name="post[tag_id]" id="tagId">
+                <input type="hidden" name="post[tag_id]" id="tagId" value="{{ $post->tag->id }}">
                 <label class="ml-2 text-sm block mb-2">ステータス</label>
                 <span class="tag uppercase text-xl px-4 bg-gray-50 py-0.5 mx-4 text-center border-gray-500 border rounded-lg text-gray-700 font-medium" data-position="1" data-tag-id="{{ $category->tags[0]->id }}" @if($post->tag->position !== 1) style="display: none;" @endif>{{$category->tags[0]->name}}</span>
                 <span class="tag uppercase text-xl px-4 bg-blue-50 py-0.5 mx-4 text-center border-blue-500 border rounded-lg text-blue-700 font-medium" data-position="2" data-tag-id="{{ $category->tags[1]->id }}" @if($post->tag->position !== 2) style="display: none;" @endif>{{$category->tags[1]->name}}</span>
