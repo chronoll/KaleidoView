@@ -22,7 +22,7 @@ class CategoryController extends Controller
             $posts=$category->getPostsByCategory();
         }
         
-        return view('posts.category',compact('category','posts'));
+        return view('posts.category',compact('category','posts','tag'));
     }
     
     public function create(Category $category)

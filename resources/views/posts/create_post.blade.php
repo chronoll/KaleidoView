@@ -41,11 +41,12 @@
             </div>
             <div class="mt-12 mb-8">
                 <input type="hidden" name="post[tag_id]" id="tagId">
-                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-gray-500 border rounded text-gray-700 font-medium" data-position="1" data-tag-id="{{ $category->tags[0]->id }}">{{$category->tags[0]->name}}</span>
-                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-blue-500 border rounded text-blue-700 font-medium" data-position="2" data-tag-id="{{ $category->tags[1]->id }}" style="display: none;">{{$category->tags[1]->name}}</span>
-                <span class="tag uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium" data-position="3" data-tag-id="{{ $category->tags[2]->id }}" style="display: none;">{{$category->tags[2]->name}}</span>
+                <label class="ml-2 text-sm block mb-2">ステータス</label>
+                <span class="tag uppercase text-xl px-4 bg-gray-50 py-0.5 mx-4 text-center border-gray-500 border rounded-lg text-gray-700 font-medium" data-position="1" data-tag-id="{{ $category->tags[0]->id }}">{{$category->tags[0]->name}}</span>
+                <span class="tag uppercase text-xl px-4 bg-blue-50 py-0.5 mx-4 text-center border-blue-500 border rounded-lg text-blue-700 font-medium" data-position="2" data-tag-id="{{ $category->tags[1]->id }}" style="display: none;">{{$category->tags[1]->name}}</span>
+                <span class="tag uppercase text-xl px-4 bg-green-50 py-0.5 mx-4 text-center border-green-500 border rounded-lg text-green-700 font-medium" data-position="3" data-tag-id="{{ $category->tags[2]->id }}" style="display: none;">{{$category->tags[2]->name}}</span>
             </div>
-            <div class="mt-12 mb-8">
+            <div class="mb-8">
                 <label for="title" class="ml-2 text-sm block">タイトル</label>
                 <input id="title" type="text" name="post[title]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" placeholder="タイトルを入力">
             </div>

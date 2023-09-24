@@ -64,17 +64,27 @@
             @endif
         </div>
         
-        <div>
-            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[0]->id]) }}">
-                <span class="uppercase text-xs bg-green-50 p-0.5 border-gray-500 border rounded text-gray-700 font-medium">{{$category->tags[0]->name}}</span>
+        <div class="mt-4 w-full">
+            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[0]->id]) }}" class="flex items-center p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                </svg>
+                <span class="uppercase text-xl w-1/2 bg-gray-50 py-0.5 mx-1 text-center border-gray-500 border rounded-lg text-gray-700 font-medium">{{$category->tags[0]->name}}</span>
             </a>
-            <br />
-            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[1]->id]) }}">
-                <span class="uppercase text-xs bg-green-50 p-0.5 border-blue-500 border rounded text-blue-700 font-medium">{{$category->tags[1]->name}}</span>
+            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[1]->id]) }}" class="flex items-center p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                </svg>
+                <span class="uppercase text-xl w-1/2 bg-blue-50 py-0.5 mx-1 text-center border-blue-500 border rounded-lg text-blue-700 font-medium">{{$category->tags[1]->name}}</span>
             </a>
-            <br />
-            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[2]->id]) }}">
-                <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium">{{$category->tags[2]->name}}</span>
+            <a href="{{ route('categories.show', ['category' => $category->id, 'tag' => $category->tags[2]->id]) }}" class="flex items-center p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                </svg>
+                <span class="uppercase text-xl w-1/2 bg-green-50 py-0.5 mx-1 text-center border-green-500 border rounded-lg text-green-700 font-medium">{{$category->tags[2]->name}}</span>
             </a>
         </div>
     
