@@ -48,6 +48,11 @@ class Category extends Model
         return $this->relationships()->with('user')->get()->pluck('user');
     }
     
+    public function tags()
+    {
+        return $this->hasMany(Tag::class)->orderBy('position','asc');
+    }
+    
     public static function searchByName($term)
     {
         return static::where('name', 'like', '%' . $term . '%')->with('posts')->get();
@@ -56,6 +61,15 @@ class Category extends Model
     public function getPostsByCategory()
     {
         return $this->posts()->get()->sortByDesc('created_at');
+    }
+    
+    public function selectPostsByTag(Tag $tag)
+    {
+        return $this->posts()->where('tag_id',$tag->id)->get()->sortByDesc('created_at');
+    }
+    
+    public function getTagsByCategory(){
+        return $this->tags()->get()->sortByDesc('position');
     }
     
     public function getFollowerCountAttribute()
