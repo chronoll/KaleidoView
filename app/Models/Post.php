@@ -17,6 +17,7 @@ class Post extends Model
         'title',
         'body',
         'post_image',
+        'tag_id',
     ];
     
     public function user()
@@ -37,6 +38,11 @@ class Post extends Model
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+    
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class);
     }
     
     public static function searchByTitle($term)

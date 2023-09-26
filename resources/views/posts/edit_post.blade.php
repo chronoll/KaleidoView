@@ -36,7 +36,14 @@
             <div class='flex justify-center items-center h-full'>
                 <img src="{{ $post->post_image }}" alt="画像が読み込めません。"/>
             </div>
-            <div class='mt-12 mb-8'>
+            <div class="mt-12 mb-8">
+                <input type="hidden" name="post[tag_id]" id="tagId" value="{{ $post->tag->id }}">
+                <label class="ml-2 text-sm block mb-2">ステータス</label>
+                <span class="tag uppercase text-xl px-4 bg-gray-50 py-0.5 mx-4 text-center border-gray-500 border rounded-lg text-gray-700 font-medium" data-position="1" data-tag-id="{{ $category->tags[0]->id }}" @if($post->tag->position !== 1) style="display: none;" @endif>{{$category->tags[0]->name}}</span>
+                <span class="tag uppercase text-xl px-4 bg-blue-50 py-0.5 mx-4 text-center border-blue-500 border rounded-lg text-blue-700 font-medium" data-position="2" data-tag-id="{{ $category->tags[1]->id }}" @if($post->tag->position !== 2) style="display: none;" @endif>{{$category->tags[1]->name}}</span>
+                <span class="tag uppercase text-xl px-4 bg-green-50 py-0.5 mx-4 text-center border-green-500 border rounded-lg text-green-700 font-medium" data-position="3" data-tag-id="{{ $category->tags[2]->id }}" @if($post->tag->position !== 3) style="display: none;" @endif>{{$category->tags[2]->name}}</span>
+            </div>
+            <div class='mb-8'>
                 <label for="title" class="ml-2 text-sm block">タイトル</label>
                 <input id="title" type="text" name="post[title]" class="border-0 outline-none mx-2 mt-2 placeholder-gray-500 placeholder-opacity-50 w-full py-2" placeholder="タイトルを入力" value='{{$post->title}}'>
                 <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
@@ -65,4 +72,25 @@
             document.getElementById(`form_${id}`).submit();
         }
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        let tagElements = document.querySelectorAll('.tag');
+        let tagIdField = document.getElementById('tagId');
+
+        tagElements.forEach(tagElement => {
+            tagElement.addEventListener('click', function() {
+                let position = parseInt(tagElement.getAttribute('data-position'));
+                let nextPosition = (position % 3) + 1; 
+
+                // すべてのタグを非表示にする
+                tagElements.forEach(el => el.style.display = 'none');
+            
+                // 次のタグだけを表示する
+                let nextTagElement = document.querySelector(`[data-position="${nextPosition}"]`);
+                nextTagElement.style.display = 'inline';
+            
+                // クリックしたタグのdata-tag-idを隠しフィールドにセット
+                tagIdField.value = nextTagElement.getAttribute('data-tag-id');
+            });
+        });
+    });
 </script>

@@ -37,7 +37,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $comments = Comment::getRootCommentForPost($post->id);
-        $category=$post->category;
+        $category=$post->category->load('tags');
         return view('posts.show', compact('post', 'category','comments'));
         
     }
@@ -97,6 +97,7 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
+    
     
     public function delete(Post $post)
     {

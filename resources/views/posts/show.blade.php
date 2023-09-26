@@ -28,6 +28,16 @@
             <div class='flex justify-between items-center w-full'>
                 <div class='text-3xl'>{{$post->title}}</div>
                 <div class="flex items-center text-gray-700 mb-1 mr-2">
+                    @if($post->tag->position==1)
+                    <span class="uppercase text-xl w-28 bg-gray-50 py-0.5 mx-4 text-center border-gray-500 border rounded-lg text-gray-700 font-medium">{{$post->tag->name}}</span>
+                    @endif
+                    @if($post->tag->position==2)
+                    <span class="uppercase text-xl w-28 bg-blue-50 py-0.5 mx-4 text-center border-blue-500 border rounded-lg text-blue-700 font-medium">{{$post->tag->name}}</span>
+                    @endif
+                    @if($post->tag->position==3)
+                    <span class="uppercase text-xl w-28 bg-green-50 py-0.5 mx-4 text-center border-green-500 border rounded-lg text-green-700 font-medium">{{$post->tag->name}}</span>
+                    @endif
+
                     @if (Auth::user()->hasLiked($post))
                     <!-- いいねを外すボタン -->
                     <form method="POST" action="{{ route('unlike', $post) }}">
@@ -99,6 +109,7 @@
     </div>
     </div>
 </x-app-layout>
+
 <script>
 function deleteComment(id){
     'use strict'

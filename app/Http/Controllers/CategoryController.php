@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 use App\Http\Requests\CategoryRequest;
 use Auth;
 use App\Http\Controllers\Controller;
@@ -13,11 +14,15 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class CategoryController extends Controller
 {
-    public function index(Category $category)
+    public function index(Category $category,Tag $tag=null)
     {
-        $posts=$category->getPostsByCategory();
+        if($tag){
+            $posts=$category->selectPostsByTag($tag);
+        }else{
+            $posts=$category->getPostsByCategory();
+        }
         
-        return view('posts.category',compact('category','posts'));
+        return view('posts.category',compact('category','posts','tag'));
     }
     
     public function create(Category $category)
@@ -58,6 +63,18 @@ class CategoryController extends Controller
         }
         $input+=['user_id'=>Auth::user()->id];
         $category->fill($input)->save();
+        
+        //Tagインデックスを作成
+        $tagData=$request->input('tag');
+        foreach($tagData as $index=>$data){
+            $tag=new Tag;
+            $tag->name=$data['name'];
+            $tag->category_id=$category->id;
+            $tag->position=$index+1;
+            $tag->save();
+        }
+        
+        
         return redirect('/categories/' . $category->id);
     }
     
@@ -89,6 +106,15 @@ class CategoryController extends Controller
         }
         $input+=['user_id'=>Auth::user()->id];
         $category->fill($input)->save();
+        
+        $tagData=$request->input('tag');
+        foreach($tagData as $index=>$data){
+            if(isset($category->tags[$index])){
+                $category->tags[$index]->update($data);
+            }
+        }
+        
+        
         return redirect('/categories/' . $category->id);
     }
     
