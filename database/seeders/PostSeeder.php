@@ -24,6 +24,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689076923/live_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>1,
         ]);
         DB::table('posts')->insert([
            'category_id'=>1,
@@ -33,6 +34,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689077491/Rain.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>2,
         ]);
         DB::table('posts')->insert([
            'category_id'=>1,
@@ -42,6 +44,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689077674/ripslyme.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>3,
         ]);
         DB::table('posts')->insert([
            'category_id'=>3,
@@ -51,6 +54,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689077918/study_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>8,
         ]);
         DB::table('posts')->insert([
            'category_id'=>3,
@@ -60,6 +64,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689077918/study_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>8,
         ]);
         DB::table('posts')->insert([
            'category_id'=>3,
@@ -69,6 +74,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689077918/study_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>9,
         ]);
         
         DB::table('posts')->insert([
@@ -112,6 +118,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689078150/picture_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>12,
         ]);
         DB::table('posts')->insert([
            'category_id'=>5,
@@ -125,6 +132,7 @@ class PostSeeder extends Seeder
            'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689078727/cafe_1.jpg',
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
+           'tag_id'=>14,
         ]);
     }
 }
