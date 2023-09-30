@@ -121,5 +121,47 @@ class TagSeeder extends Seeder
             'created_at'=>new Datetime(),
             'updated_at'=>new Datetime(),
         ]);
+        DB::table('tags')->insert([
+            'name'=>'いろいろ',
+            'category_id'=>6,
+            'position'=>1,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
+        DB::table('tags')->insert([
+            'name'=>'うとうと',
+            'category_id'=>6,
+            'position'=>2,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
+        DB::table('tags')->insert([
+            'name'=>'ごはん',
+            'category_id'=>6,
+            'position'=>3,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
+        DB::table('tags')->insert([
+            'name'=>'積読',
+            'category_id'=>7,
+            'position'=>1,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
+        DB::table('tags')->insert([
+            'name'=>'読書中',
+            'category_id'=>7,
+            'position'=>2,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
+        DB::table('tags')->insert([
+            'name'=>'読了',
+            'category_id'=>7,
+            'position'=>3,
+            'created_at'=>new Datetime(),
+            'updated_at'=>new Datetime(),
+        ]);
     }
 }

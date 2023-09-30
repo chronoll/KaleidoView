@@ -54,5 +54,21 @@ class CategorySeeder extends Seeder
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
         ]);
+        DB::table('categories')->insert([
+           'user_id'=>4,
+           'name'=>'スンスン',
+           'category_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693123642/sunsun/ffxlnfae61lncnyolvrx.png',
+           'category_explanation'=>'ヒョウモントカゲモドキのスンスン(♀)です。',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+        ]);
+        DB::table('categories')->insert([
+           'user_id'=>4,
+           'name'=>'My 本棚',
+           'category_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695452143/novels/xhfvoszy3zu7nywy0uki.png',
+           'category_explanation'=>'私の本棚を紹介します。お気軽にコメントしてください',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+        ]);
     }
 }

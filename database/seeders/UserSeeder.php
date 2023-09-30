@@ -46,5 +46,15 @@ class UserSeeder extends Seeder
            'created_at'=>new DateTime(),
            'updated_at'=>new DateTime(),
         ]);
+        DB::table('users')->insert([
+           'name'=>'Michika',
+           'email'=>'Michika@example.com',
+           'password'=>Hash::make('password_4'),
+           'nickname'=>'クロタカ',
+           'user_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693125522/sunsun/lsrqceqc60uffdrijm1r.png',
+           'self_introduction'=>'黒高でーす',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+        ]);
     }
 }
