@@ -134,5 +134,225 @@ class PostSeeder extends Seeder
            'updated_at'=>new DateTime(),
            'tag_id'=>14,
         ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'爆睡',
+           'body'=>'寝相が悪いです。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124684/sunsun/aa3jaipxllznfqzdpnw3.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>17,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'ウォッチング',
+           'body'=>'温湿度計を見ています。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124640/sunsun/iahdytalhinapgikmqs4.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'立ち寝',
+           'body'=>'立ちながら寝ています。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124571/sunsun/yvbwmll0r5nulahm9hvc.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>17,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'白い服',
+           'body'=>'もう少しで脱皮です。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124529/sunsun/sa31gokf4ni5q3n5mazy.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'近い',
+           'body'=>'近いです。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124483/sunsun/dnz9l39z4rg3gdtfhjjy.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'ぱっちり',
+           'body'=>'綺麗に撮れました。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124417/sunsun/q5e2knzzrgag76u29omw.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'あくび',
+           'body'=>'威嚇ではなくあくびです。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124372/sunsun/sdxbk9e8cvx4plcgzvu0.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'登り中',
+           'body'=>'上っている途中です。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124338/sunsun/c4jep8zeez3xu3k6w2s3.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'脱皮前',
+           'body'=>'もうすぐ脱皮です。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124300/sunsun/tmomeavxken5acxmhfg7.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'ウィンク',
+           'body'=>'ウィンクに見えますが半分寝ています。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124257/sunsun/x9codrivenbhohanzlxe.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>17,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'手をくれた',
+           'body'=>'手の皮をくれました。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124224/sunsun/udxwal3gusgqb18svvnh.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'セーター',
+           'body'=>'レオパのセーターをもらいました。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124186/sunsun/ftndhoifms4igenwsmjo.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'きゅるん',
+           'body'=>'きゅるんって感じです。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124159/sunsun/hm8ee4p9wmslsbxkab65.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>16,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>6,
+           'user_id'=>4,
+           'title'=>'起こされた',
+           'body'=>'起こされてこの顔です。かわいい',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1693124130/sunsun/jmhckvzgm5dtbq9hn4ex.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>17,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'予知夢-東野圭吾',
+           'body'=>'いつか読む！',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695549190/novels/viaflsxd5jhigdsxy1so.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>19,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'神様のカルテ-夏川草介',
+           'body'=>'読みやすくて読後感もいいです。',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695548539/novels/ighdjpwzzubwfkcfhxmk.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>21,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'凍りのくじら-辻村深月',
+           'body'=>'初めて読んだ辻村深月小説です。',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695547395/novels/n2m1qagubzyvazhubnzw.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>21,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'小暮写真館-宮部みゆき',
+           'body'=>'まだ読んでいる途中ですが、面白いです。',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695453022/novels/yfwhrjjd8yizj8hwhvp0.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>20,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'氷菓-米澤穂信',
+           'body'=>'最初しか読んでませんが、アニメも人気で面白いのでしょう',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695452903/novels/mzjqqjn8ledkrljepn5f.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>20,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'密やかな結晶-小川洋子',
+           'body'=>'小説全体に流れる虚ろな雰囲気が好きです',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695452810/novels/irbgtzczseluydxqs8uz.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>21,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'烏に単は似合わない-阿部智里',
+           'body'=>'後半の怒涛の展開が癖になります。',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695452661/novels/niqqnk4njsrjjstfc4dv.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>21,
+        ]);
+        DB::table('posts')->insert([
+           'category_id'=>7,
+           'user_id'=>4,
+           'title'=>'永遠の0-百田尚樹',
+           'body'=>'まだ読んでないですが、有名な作品なので期待できます',
+           'post_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1695452534/novels/dabivie6wtn6njaczozj.png',
+           'created_at'=>new DateTime(),
+           'updated_at'=>new DateTime(),
+           'tag_id'=>19,
+        ]);
     }
 }
