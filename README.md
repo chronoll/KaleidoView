@@ -49,7 +49,7 @@ TwitterなどのSNSを利用していると、例えば
 フォローしたカテゴリ一覧と投稿は、タイムラインで確認できます。 
 
 ## Features
-### いいね、フォロー、コメント等SNSの基本機能に加え、自己表現に特化した機能
+いいね、フォロー、コメント、検索等SNSの基本機能に加え、以下の自己表現に特化した機能があります。
 ### カテゴリ別背景機能
 <table>
 
@@ -64,11 +64,11 @@ TwitterなどのSNSを利用していると、例えば
 
 ### カテゴリ別タグ設定機能
 
-<img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1696868513/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-10-10_012128_qau4sv.png" height="200">
+<img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1696868513/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-10-10_012128_qau4sv.png" height="500">
 
 カテゴリ毎に3つのタグを自由に命名できます。投稿編集画面で簡単にタグを更新できるため、進行度を表すステータスとして設定するのもいいかもしれません。
 
-<img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1696868403/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-10-09_235859_dzijao.png" height="200">
+<img src="https://res.cloudinary.com/dig0xnvus/image/upload/v1696868403/github/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2023-10-09_235859_dzijao.png" height="500">
 
 カテゴリ詳細(投稿一覧)画面で、タグ別の投稿抽出を行うことも可能です。
 
