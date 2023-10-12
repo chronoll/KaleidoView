@@ -54,7 +54,10 @@ class UserController extends Controller
         
         $input=$request['user'];
         
-        if($request->input('cropped_image')!=$user->user_image){
+        if($request->input('cropped_image')==null){
+            $input+=['user_image'=>'https://res.cloudinary.com/dig0xnvus/image/upload/v1689043946/default.jpg'];
+        }
+        else if($request->input('cropped_image')!=$user->user_image){
             // cropped_imageからBase64データを取得
             $base64_image = $request->input('cropped_image');
 
