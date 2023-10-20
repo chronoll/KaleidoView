@@ -51,35 +51,27 @@ class PostController extends Controller
         return view('posts.create_post',['category'=>$category]);
     }
     
-    public function store1(PostRequest $request,Post $post)
-    {
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-        
-        $input=$request['post'];
-        $input+=['user_id'=>Auth::user()->id];
-        $input+=['post_image'=>$image_url];
-        $post->fill($input)->save();
-        return redirect('/posts/' . $post->id);
-    }
     public function store(PostRequest $request, Post $post)
-{
-    // cropped_imageからBase64データを取得
-    $base64_image = $request->input('cropped_image');
+    {
+        // cropped_imageからBase64データを取得
+        $base64_image = $request->input('cropped_image');
 
-    // 不要な部分を削除してBase64データだけを取得
-    list($type, $base64_image) = explode(';', $base64_image);
-    list(, $base64_image) = explode(',', $base64_image);
+        // 不要な部分を削除してBase64データだけを取得
+        list($type, $base64_image) = explode(';', $base64_image);
+        list(, $base64_image) = explode(',', $base64_image);
 
-    // Base64データをCloudinaryにアップロード
-    $uploaded_image = Cloudinary::upload("data:" . $type . ";base64," . $base64_image);
-    $image_url = $uploaded_image->getSecurePath();
+        // Base64データをCloudinaryにアップロード
+        $uploaded_image = Cloudinary::upload("data:" . $type . ";base64," . $base64_image);
+        $image_url = $uploaded_image->getSecurePath();
 
-    $input = $request['post'];
-    $input += ['user_id' => Auth::user()->id];
-    $input += ['post_image' => $image_url];
-    $post->fill($input)->save();
-    return redirect('/posts/' . $post->id);
-}
+        $input = $request['post'];
+        $input += ['user_id' => Auth::user()->id];
+        $input += ['post_image' => $image_url];
+        $post->fill($input)->save();
+    
+        return redirect('/posts/' . $post->id);
+    
+    }
     
     public function edit(Post $post)
     {
